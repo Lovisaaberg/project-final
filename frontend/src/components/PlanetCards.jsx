@@ -8,21 +8,24 @@ export const PlanetCards = () => {
   //import.meta.env.API_KEY_PLANETS;
   const [planets, setPlanets] = useState([]);
 
-  const fetchPlanets = () => {
-    fetch(URL)
-      .then((response) => response.json())
-      .then((json) => {
-        setPlanets(json.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    console.log(URL);
-  };
-
   useEffect(() => {
+    const fetchPlanets = () => {
+      fetch(URL)
+        .then((response) => {
+          return response.json();
+        })
+        .then((json) => {
+          setPlanets(json);
+          console.log(json);
+        })
+        .catch((error) => {
+          // console.log(error);
+        });
+      // console.log(URL);
+    };
+
     fetchPlanets();
-  }, []);
+  }, [URL]);
 
   return <></>;
 };
