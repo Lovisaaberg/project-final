@@ -3,13 +3,13 @@
 // import { Calculator } from "./components/Calculator";
 
 import { PlanetCards } from "./components/PlanetCards"
-import { SpaceFeed } from "./components/SpaceFeed"
+//import { SpaceFeed } from "./components/SpaceFeed"
 
 export const App = () => {
   return (
     <>
       <PlanetCards />
-      <SpaceFeed />
+      
     </>
   )
 }
@@ -18,5 +18,6 @@ export const App = () => {
   /* <Calculator/>
 <BrowserRouter>
 <PlanetRoutes />
-</BrowserRouter> */
+</BrowserRouter>
+<SpaceFeed /> */
 }
