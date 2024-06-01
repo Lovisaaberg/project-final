@@ -1,23 +1,22 @@
-// import { BrowserRouter } from "react-router-dom";
-// import { PlanetRoutes } from "./routes/PlanetRoutes";
+import { BrowserRouter } from "react-router-dom";
+import { PlanetRoutes } from "./routes/PlanetRoutes";
 // import { Calculator } from "./components/Calculator";
 
-import { PlanetCards } from "./components/PlanetCards"
+import { AllPlanets } from "./components/AllPlanets";
 //import { SpaceFeed } from "./components/SpaceFeed"
 
 export const App = () => {
   return (
     <>
-      <PlanetCards />
-      
+      <BrowserRouter>
+        <AllPlanets />
+        <PlanetRoutes />
+      </BrowserRouter>
     </>
-  )
-}
+  );
+};
 
 {
   /* <Calculator/>
-<BrowserRouter>
-<PlanetRoutes />
-</BrowserRouter>
 <SpaceFeed /> */
 }
