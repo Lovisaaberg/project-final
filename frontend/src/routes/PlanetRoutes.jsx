@@ -6,7 +6,7 @@ export const PlanetRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<AllPlanets />} />
-      <Route path="/:planet" element={<Planet />} />
+      <Route path="/planets/:planet" element={<Planet />} />
     </Routes>
   );
 };

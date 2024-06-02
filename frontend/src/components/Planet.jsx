@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { PlanetDetails } from "./PlanetDetails";
 
 export const Planet = () => {
   const { planet } = useParams();
   const [onePlanet, setOnePlanet] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const URL = `https://project-final-45vw.onrender.com/planets/${planet}`;
+  //const temperature = Object.entries(onePlanet.surfaceTemperature);
 
   useEffect(() => {
     const fetchOnePlanet = async () => {
@@ -33,7 +35,7 @@ export const Planet = () => {
   }, [planet]);
 
   if (loading) {
-    return <p>Loading one planet...</p>;
+    return <p>Loading planet...</p>;
   }
 
   if (error) {
@@ -44,25 +46,10 @@ export const Planet = () => {
     <div>
       <div>
         <Link className="goHome" to="/">
-          <p>Add here: Go to home page link</p>
+          <p>Back to spaceport</p>
         </Link>
       </div>
-      <div>
-        <h1>{onePlanet.name}</h1>
-        <p>{onePlanet.nickname}</p>
-        <p>{onePlanet.moons}</p>
-        <p>{onePlanet.asteroids}</p>
-        <p>{onePlanet.material}</p>
-        <p>{onePlanet.surfaceTemperature}</p>
-
-        <p>{onePlanet.weatherClimate}</p>
-        <p>{onePlanet.travelTime}</p>
-        <p>{onePlanet.curiosa}</p>
-      </div>
+      <PlanetDetails onePlanet={onePlanet} />
     </div>
   );
 };
-{
-  /* <p>Day Temperature: {onePlanet.surfaceTemperature.day}</p>
-<p>Night Temperature: {onePlanet.surfaceTemperature.night}</p> */
-}
