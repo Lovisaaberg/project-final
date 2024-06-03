@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { PlanetDetails } from "./PlanetDetails";
+import { PlanetList } from "./PlanetList";
 
 export const Planet = () => {
   const { planet } = useParams();
@@ -8,7 +9,6 @@ export const Planet = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const URL = `https://project-final-45vw.onrender.com/planets/${planet}`;
-  //const temperature = Object.entries(onePlanet.surfaceTemperature);
 
   useEffect(() => {
     const fetchOnePlanet = async () => {
@@ -24,7 +24,6 @@ export const Planet = () => {
         }
         const data = await response.json();
         setOnePlanet(data);
-        console.log(data);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -45,11 +44,15 @@ export const Planet = () => {
   return (
     <div>
       <div>
-        <Link className="goHome" to="/">
+        <Link to="/">
           <p>Back to spaceport</p>
         </Link>
       </div>
       <PlanetDetails onePlanet={onePlanet} />
+      <PlanetList />
     </div>
+
+      
+
   );
 };
