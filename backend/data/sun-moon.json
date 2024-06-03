@@ -1,0 +1,12 @@
+{
+  "Sun": {
+    "fact": "The Sun is composed primarily of hydrogen and helium, making up about 74% and 24% of its mass, respectively.",
+    "explanation": "The Sun's core, which accounts for 25% of its radius, is where nuclear fusion occurs. In this process, hydrogen nuclei fuse together to form helium, releasing an enormous amount of energy in the form of light and heat. This energy travels from the core to the surface and then radiates out into space, providing the necessary warmth and light for life on Earth.",
+    "additional_info": "The Sun has a layered structure with the core at the center, followed by the radiative zone, and the convective zone. Surrounding these is the photosphere, which is the visible surface of the Sun, and above it lies the chromosphere and the corona, which extends millions of kilometers into space. Solar phenomena such as sunspots, solar flares, and coronal mass ejections originate in these outer layers and can have significant effects on space weather and satellite communications."
+  },
+  "Moon": {
+    "fact": "The Moon exerts a gravitational pull on Earth that significantly affects the planet's tides, creating two high and two low tides each day.",
+    "explanation": "The gravitational attraction between the Earth and the Moon causes the water in the oceans to bulge out in the direction of the Moon. This results in high tides in the areas of Earth facing towards and directly opposite the Moon. As the Earth rotates, different areas of the planet pass through these bulges, experiencing high tides. Conversely, areas that are 90 degrees away from the bulges experience low tides. This dynamic system plays a crucial role in marine navigation, coastal ecosystems, and human activities along coastlines.",
+    "additional_info": "The tidal effect of the Moon is not limited to the oceans; it also affects the Earth's crust, causing slight but measurable deformations known as Earth tides. Additionally, the interaction between the Earth and Moon has gradually slowed Earth's rotation over millions of years and has caused the Moon to drift away from Earth at a rate of about 3.8 centimeters per year. This process is known as tidal acceleration and has long-term implications for the length of our days and the stability of Earth's axial tilt, which influences our climate patterns."
+  }
+}
