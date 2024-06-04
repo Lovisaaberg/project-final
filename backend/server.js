@@ -4,9 +4,13 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import expressListEndpoints from "express-list-endpoints";
 import PlanetModel from "./models/PlanetModel";
+//import MoonModel from "./models/MoonModel";
+//import SunModel from "./models/SunModel";
 import SpaceFeed from "./models/SpaceFeed";
 import spaceData from "./data/SpaceFeed.json";
 import planetsData from "./data/Planets.json";
+//import sunData from "./data/sun-moon.json";
+//import moonData from "./data/sun-moon.json";
 
 //Load environment variables
 dotenv.config();
@@ -95,6 +99,30 @@ app.get("/planets/:planet", async (req, res) => {
       );
   }
 });
+
+/*
+//GET Sun 
+app.get("/sun", async (req, res) => {
+  const getSun = await SunModel.find();
+
+  if (getSun) {
+    res.json(getSun);
+  } else {
+    res.status(404).send("Couldn't catch the Sun right now. Try again!");
+  }
+});
+
+//GET Moon
+app.get("/moon", async (req, res) => {
+  const getMoon = await MoonModel.find();
+
+  if (getMoon) {
+    res.json(getMoon);
+  } else {
+    res.status(404).send("Couldn't catch the Moon right now. Try again!");
+  }
+});
+*/
 
 //Route handler to show space messages in descending order from when created, limit to 10 messages
 app.get("/space-feed", async (req, res) => {
