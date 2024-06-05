@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { PlanetDetails } from "./PlanetDetails";
+import { PlanetContent } from "./PlanetContent";
 import { PlanetList } from "./PlanetList";
 
 
@@ -26,6 +26,7 @@ export const Planet = () => {
         }
         const data = await response.json()
         setOnePlanet(data)
+        console.log("planets", data)
       } catch (error) {
         setError(error.message)
       } finally {
@@ -45,7 +46,7 @@ export const Planet = () => {
 
   return (
     <div>
-      <PlanetDetails onePlanet={onePlanet} />
+      <PlanetContent onePlanet={onePlanet} />
       <PlanetList />
     </div>
   )

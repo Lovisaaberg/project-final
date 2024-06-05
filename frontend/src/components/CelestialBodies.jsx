@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import CelestialContent from "./CelestialContent";
 
-
-export const CelestialBody = () => {
-  const { CelestialBody } = useParams();
+export const CelestialBodies = () => {
+  const { celestialBody } = useParams();
   const [oneBody, setOneBody] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -23,6 +23,7 @@ export const CelestialBody = () => {
         }
         const data = await response.json();
         setOneBody(data);
+        console.log(data);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -30,7 +31,7 @@ export const CelestialBody = () => {
       }
     };
     fetchOneBody();
-  }, [oneBody]);
+  }, [URL]);
 
   if (loading) {
     return <p>Loading celestial body...</p>;
@@ -47,7 +48,9 @@ export const CelestialBody = () => {
           <p>Back to spaceport</p>
         </Link>
       </div>
-
+      <div>
+        <CelestialContent oneBody={oneBody} />
+      </div>
     </div>
   );
 };
