@@ -25,7 +25,6 @@ export const useSpaceFeedStore = create((set) => ({
         }
       )
       const data = await response.json()
-      console.log(response)
       set({ spaceFeed: data.response, loading: false })
     } catch (error) {
       set({ error, loading: false })

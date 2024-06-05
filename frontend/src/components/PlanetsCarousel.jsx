@@ -2,21 +2,30 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import mercuryImg from "../assets/images/mercury.png";
+import venusImg from "../assets/images/venus.png";
+import tellusImg from "../assets/images/tellus.png";
+import marsImg from "../assets/images/mars.png";
+import jupiterImg from "../assets/images/jupiter.png";
+import saturnImg from "../assets/images/saturn.png";
+import uranusImg from "../assets/images/uranus.png";
+import neptuneImg from "../assets/images/neptune.png";
+import plutoImg from "../assets/images/pluto.png";
 
 //Från PlanetsCarousel ska man hamna på planets/:name,
 //`/planets/${planet.name}` när man klickar på en planet
 //Länken ska vara inbakad i respektive PlanetImage
 
 const planets = [
-  { name: "Mercury" },
-  { name: "Venus" },
-  { name: "Earth" },
-  { name: "Mars" },
-  { name: "Jupiter" },
-  { name: "Saturn" },
-  { name: "Uranus" },
-  { name: "Neptune" },
-  { name: "Pluto" },
+  { name: "Mercury", image: mercuryImg },
+  { name: "Venus", image: venusImg },
+  { name: "Earth", image: tellusImg },
+  { name: "Mars", image: marsImg },
+  { name: "Jupiter", image: jupiterImg },
+  { name: "Saturn", image: saturnImg },
+  { name: "Uranus", image: uranusImg },
+  { name: "Neptune", image: neptuneImg },
+  { name: "Pluto", image: plutoImg },
 ];
 
 export const PlanetsCarousel = () => {
@@ -53,10 +62,10 @@ export const PlanetsCarousel = () => {
   return (
     <CarouselContainer>
       <Slider {...settings}>
-        {planets.map((planet, index) => (
+        {planets.map((planets, index) => (
           <Slide key={index}>
-            <PlanetImage src={planet.image} alt={planet.name} />
-            <PlanetName>{planet.name}</PlanetName>
+            <PlanetImage src={planets.image} alt={planets.name} />
+            <PlanetName>{planets.name}</PlanetName>
           </Slide>
         ))}
       </Slider>
