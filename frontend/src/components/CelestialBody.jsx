@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { PlanetDetails } from "./PlanetDetails";
-import { PlanetList } from "./PlanetList";
 
-export const Planet = () => {
-  const { planet } = useParams();
-  const [onePlanet, setOnePlanet] = useState({});
+
+export const CelestialBody = () => {
+  const { CelestialBody } = useParams();
+  const [oneBody, setOneBody] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const URL = `https://project-final-45vw.onrender.com/planets/${planet}`;
+  const URL = `https://project-final-45vw.onrender.com/celestial/${name}`;
 
   useEffect(() => {
-    const fetchOnePlanet = async () => {
+    const fetchOneBody = async () => {
       setLoading(true);
       setError(null);
 
@@ -19,22 +18,22 @@ export const Planet = () => {
         const response = await fetch(URL);
         if (!response.ok) {
           throw new Error(
-            `Failed to fetch the requested planet, reload page and try again`
+            `Failed to fetch any celestial body, reload page and try again.`
           );
         }
         const data = await response.json();
-        setOnePlanet(data);
+        setOneBody(data);
       } catch (error) {
         setError(error.message);
       } finally {
         setLoading(false);
       }
     };
-    fetchOnePlanet();
-  }, [planet]);
+    fetchOneBody();
+  }, [oneBody]);
 
   if (loading) {
-    return <p>Loading planet...</p>;
+    return <p>Loading celestial body...</p>;
   }
 
   if (error) {
@@ -48,8 +47,7 @@ export const Planet = () => {
           <p>Back to spaceport</p>
         </Link>
       </div>
-      <PlanetDetails onePlanet={onePlanet} />
-      <PlanetList />
+
     </div>
   );
 };

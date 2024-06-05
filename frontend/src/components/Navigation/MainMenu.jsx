@@ -3,7 +3,7 @@ import { NavLinks } from "./NavLinks"
 export const MainMenu = () => {
   const navLinks = [
     { label: "Planets", to: "/planets" },
-    { label: "Calculator", to: "/calculator" },
+    { label: "Mass Converter", to: "/massconverter" },
     { label: "The Sun", to: "/sun" },
     { label: "The Moon", to: "/moon" },
   ]

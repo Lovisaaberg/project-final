@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useState } from "react";
 
-export const Calculator = () => {
+export const MassConverter = () => {
   return <WeightOnPlanets />
 }
 
@@ -48,7 +48,8 @@ const WeightOnPlanets = () => {
 
   return (
     <div>
-      <h2>Gravitational force converter</h2>
+      <h2>Try the Mass converter!</h2>
+      <p>Enter the weight of any object in kilograms to see its equivalent weight on each planet.</p>
       <input
         type="number"
         value={weight}
