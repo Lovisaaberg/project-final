@@ -1,3 +1,6 @@
+//This component is used when showing the info about one single planet.
+// IMPLEMENT: click to see next - click to see previous
+
 import { Link } from "react-router-dom";
 
 //array to store all planets route names

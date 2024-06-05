@@ -1,3 +1,5 @@
+//This is the planet card itself
+
 export const PlanetDetails = ({ onePlanet }) => {
   const surfaceTemperature = onePlanet.surfaceTemperature;
 

@@ -1,3 +1,5 @@
+// parent component for PlanetDetail & PlanetList
+
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { PlanetDetails } from "./PlanetDetails";
@@ -51,8 +53,5 @@ export const Planet = () => {
       <PlanetDetails onePlanet={onePlanet} />
       <PlanetList />
     </div>
-
-      
-
   );
 };

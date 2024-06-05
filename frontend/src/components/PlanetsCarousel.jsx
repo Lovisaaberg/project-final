@@ -1,19 +1,22 @@
-import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+//Från PlanetsCarousel ska man hamna på planets/:name,
+//`/planets/${planet.name}` när man klickar på en planet
+//Länken ska vara inbakad i respektive PlanetImage
+
 const planets = [
-  { name: "Mercury", image: "../images/planet1.jpg" },
-  { name: "Venus", image: "../images/planet1.jpg" },
-  { name: "Earth", image: "../images/planet1.jpg" },
-  { name: "Mars", image: "../images/planet1.jpg"},
-  { name: "Jupiter", image: "../images/planet1.jpg" },
-  { name: "Saturn", image: "../images/planet1.jpg"},
-  { name: "Uranus", image: "../images/planet1.jpg"},
-  { name: "Neptune", image: "../images/planet1.jpg" },
-  { name: "Pluto", image: "../images/planet1.jpg"},
+  { name: "Mercury" },
+  { name: "Venus" },
+  { name: "Earth" },
+  { name: "Mars" },
+  { name: "Jupiter" },
+  { name: "Saturn" },
+  { name: "Uranus" },
+  { name: "Neptune" },
+  { name: "Pluto" },
 ];
 
 export const PlanetsCarousel = () => {
