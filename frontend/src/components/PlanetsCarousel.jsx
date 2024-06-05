@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
@@ -30,6 +31,8 @@ const planets = [
 ];
 
 export const PlanetsCarousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -58,15 +61,20 @@ export const PlanetsCarousel = () => {
         },
       },
     ],
+    beforeChange: (current, next) => setCurrentSlide(next),
   };
 
   return (
     <CarouselContainer>
       <Slider {...settings}>
         {planets.map((planets, index) => (
-          <Slide key={index}>
+          <Slide key={index} isCenter={index === currentSlide}>
             <Link to={`/planets/${planets.name.toLowerCase()}`}>
-              <PlanetImage src={planets.image} alt={planets.name} />
+              <PlanetImage
+                src={planets.image}
+                alt={planets.name}
+                isCenter={index === currentSlide}
+              />
             </Link>
             <PlanetName>{planets.name}</PlanetName>
           </Slide>
@@ -84,12 +92,18 @@ const CarouselContainer = styled.div`
 const Slide = styled.div`
   text-align: center;
   padding: 10px;
+  transition: transform 0.5s, opacity 0.5s;
+  transform: ${({ isCenter }) => (isCenter ? "scale(1.0)" : "scale(0.7)")};
+  opacity: ${({ isCenter }) => (isCenter ? "1" : "0.5")};
+  margin: ${({ isCenter }) => (isCenter ? "0 -40px" : "0")};
 `;
 
 const PlanetImage = styled.img`
   width: 100%;
   max-width: 150px;
   margin: 0 auto;
+  transition: transform 0.5s;
+  transform: ${({ isCenter }) => (isCenter ? "scale(1.0)" : "scale(0.9)")};
 `;
 
 const PlanetName = styled.p`
