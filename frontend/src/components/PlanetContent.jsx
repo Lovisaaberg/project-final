@@ -1,3 +1,16 @@
+import styled from "styled-components";
+
+const PlanetPage = styled.div`
+    background: #000000;
+    h1.space-mono-bold {
+      font-family: "Space Mono";
+      color: #FFFFFF;
+    }
+    p.roboto-mono {
+      font-family: "Roboto Mono";
+    }
+  }`;
+
 export const PlanetContent = ({ onePlanet }) => {
   const surfaceTemperature = onePlanet.surfaceTemperature;
 
@@ -7,48 +20,44 @@ export const PlanetContent = ({ onePlanet }) => {
 
   return (
     <div>
-      <div>
-        <h1>{onePlanet.name}</h1>
-        <p>Nickname: {onePlanet.nickname}</p>
-        <p>Moons: {onePlanet.moons}</p>
-        <p>Asteroids: {onePlanet.asteroids}</p>
-        <p>Material: {onePlanet.material}</p>
+      <PlanetPage>
+        <h1 className="space-mono-bold">{onePlanet.name}</h1>
+        <p className="roboto-mono">Nickname: {onePlanet.nickname}</p>
+        <p className="roboto-mono">Moons: {onePlanet.moons}</p>
+        <p className="roboto-mono">Asteroids: {onePlanet.asteroids}</p>
+        <p className="roboto-mono">Material: {onePlanet.material}</p>
         {surfaceTemperature && (
-          <div>
+          <p className="roboto-mono">
             Surface Temperature:
             {typeof surfaceTemperature === "string" ? (
-              // If surfaceTemperature is a string, display it directly:
               <div>{surfaceTemperature}</div>
             ) : (
-              // If surfaceTemperature is an object, display temperatures accordingly:
               <div>
                 {surfaceTemperature.day && (
                   <div>Day: {surfaceTemperature.day}</div>
                 )}
-
                 {surfaceTemperature.night && (
                   <div>Night: {surfaceTemperature.night}</div>
                 )}
-
                 {surfaceTemperature.summer && (
                   <div>Summer: {surfaceTemperature.summer}</div>
                 )}
-
                 {surfaceTemperature.winter && (
                   <div>Winter: {surfaceTemperature.winter}</div>
                 )}
-
                 {surfaceTemperature.range && (
                   <div>Range: {surfaceTemperature.range}</div>
                 )}
               </div>
             )}
-          </div>
+          </p>
         )}
-        <p>Weather/Climate: {onePlanet.weatherClimate}</p>
-        <p>Travel Time: {onePlanet.travelTime}</p>
-        <p>Curiosa: {onePlanet.curiosa}</p>
-      </div>
+        <p className="roboto-mono">
+          Weather/Climate: {onePlanet.weatherClimate}
+        </p>
+        <p className="roboto-mono">Travel Time: {onePlanet.travelTime}</p>
+        <p className="roboto-mono">Curiosa: {onePlanet.curiosa}</p>
+      </PlanetPage>
     </div>
   );
 };

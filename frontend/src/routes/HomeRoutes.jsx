@@ -7,6 +7,7 @@ import { Planet } from "../components/Planet";
 import { CelestialBodies } from "../components/CelestialBodies";
 import { NotFoundPage } from "../components/NotFoundPage";
 
+
 export const HomeRoutes = () => {
   return (
     <Routes>
