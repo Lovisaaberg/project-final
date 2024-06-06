@@ -16,9 +16,14 @@ const CelestialContent = ({ oneBody }) => {
     <div>
       <SunAndMoonPage>
         <h1 className="space-mono-bold">The {oneBody.name}</h1>
-        <p className="roboto-mono">Facts: {oneBody.fact}</p>
-        <p className="roboto-mono">Explanation: {oneBody.explanation}</p>
-        <p className="roboto-mono">Curiosa: {oneBody.additional_info}</p>
+        <p className="roboto-mono">Nickname: {oneBody.nickname}</p>
+        <p className="roboto-mono">Material: {oneBody.material}</p>
+        <p className="roboto-mono">
+          Surface Temperature: {oneBody.surfaceTemperature}
+        </p>
+        <p className="roboto-mono">Weather Climate: {oneBody.weatherClimate}</p>
+        <p className="roboto-mono">Travel time: {oneBody.travelTime}</p>
+        <p className="roboto-mono">Curiosa: {oneBody.curiosa}</p>
       </SunAndMoonPage>
     </div>
   );
