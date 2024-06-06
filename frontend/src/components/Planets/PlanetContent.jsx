@@ -1,4 +1,13 @@
 import styled from "styled-components";
+import mercuryImg from "../../assets/images/mercury.png";
+import venusImg from "../../assets/images/venus.png";
+import tellusImg from "../../assets/images/tellus.png";
+import marsImg from "../../assets/images/mars.png";
+import jupiterImg from "../../assets/images/jupiter.png";
+import saturnImg from "../../assets/images/saturn.png";
+import uranusImg from "../../assets/images/uranus.png";
+import neptuneImg from "../../assets/images/neptune.png";
+import plutoImg from "../../assets/images/pluto.png";
 
 const PlanetPage = styled.div`
     background: #000000;
@@ -9,7 +18,25 @@ const PlanetPage = styled.div`
     p.roboto-mono {
       font-family: "Roboto Mono";
     }
-  }`;
+  }
+  `;
+
+const PlanetImg = styled.img`
+  height: 300px;
+  width: 300px;
+`;
+
+const planetImages = {
+  mercury: mercuryImg,
+  venus: venusImg,
+  tellus: tellusImg,
+  mars: marsImg,
+  jupiter: jupiterImg,
+  saturn: saturnImg,
+  uranus: uranusImg,
+  neptune: neptuneImg,
+  pluto: plutoImg,
+};
 
 export const PlanetContent = ({ onePlanet }) => {
   const surfaceTemperature = onePlanet.surfaceTemperature;
@@ -18,10 +45,13 @@ export const PlanetContent = ({ onePlanet }) => {
     ? Object.entries(surfaceTemperature)
     : [];
 
+  const planetImg = planetImages[onePlanet.name.toLowerCase()];
+
   return (
     <div>
       <PlanetPage>
         <h1 className="space-mono-bold">{onePlanet.name}</h1>
+        <PlanetImg src={planetImg} alt={onePlanet.name} />
         <p className="roboto-mono">Nickname: {onePlanet.nickname}</p>
         <p className="roboto-mono">Moons: {onePlanet.moons}</p>
         <p className="roboto-mono">Asteroids: {onePlanet.asteroids}</p>
