@@ -1,14 +1,41 @@
 [
   {
     "name": "Sun",
-    "fact": "The Sun is composed primarily of hydrogen and helium, making up about 74% and 24% of its mass, respectively.",
-    "explanation": "The Sun's core, which accounts for 25% of its radius, is where nuclear fusion occurs. In this process, hydrogen nuclei fuse together to form helium, releasing an enormous amount of energy in the form of light and heat. This energy travels from the core to the surface and then radiates out into space, providing the necessary warmth and light for life on Earth.",
-    "additional_info": "The Sun has a layered structure with the core at the center, followed by the radiative zone, and the convective zone. Surrounding these is the photosphere, which is the visible surface of the Sun, and above it lies the chromosphere and the corona, which extends millions of kilometers into space. Solar phenomena such as sunspots, solar flares, and coronal mass ejections originate in these outer layers and can have significant effects on space weather and satellite communications."
+    "nickname": "The Star at the Center",
+    "material": "Hydrogen and helium",
+    "surfaceTemperature": {
+      "core": "15,000,000°C",
+      "surface": "5,500°C"
+    },
+    "weatherClimate": "Solar wind, sunspots, solar flares, coronal mass ejections",
+    "travelTime": "Approximately 93 million miles from Earth; about 8 minutes for light to travel",
+    "curiosa": [
+      "The Sun's core, which accounts for 25% of its radius, is where nuclear fusion occurs.",
+      "The Sun has a layered structure with the core, radiative zone, and convective zone.",
+      "Solar phenomena such as sunspots, solar flares, and coronal mass ejections originate in the outer layers.",
+      "The Sun is about 4.6 billion years old and is expected to continue burning for another 5 billion years.",
+      "It contains 99.86% of the mass in the Solar System.",
+      "The Sun's magnetic field is carried outward through the Solar System by the solar wind."
+    ]
   },
   {
     "name": "Moon",
-    "fact": "The Moon exerts a gravitational pull on Earth that significantly affects the planet's tides, creating two high and two low tides each day.",
-    "explanation": "The gravitational attraction between the Earth and the Moon causes the water in the oceans to bulge out in the direction of the Moon. This results in high tides in the areas of Earth facing towards and directly opposite the Moon. As the Earth rotates, different areas of the planet pass through these bulges, experiencing high tides. Conversely, areas that are 90 degrees away from the bulges experience low tides. This dynamic system plays a crucial role in marine navigation, coastal ecosystems, and human activities along coastlines.",
-    "additional_info": "The tidal effect of the Moon is not limited to the oceans; it also affects the Earth's crust, causing slight but measurable deformations known as Earth tides. Additionally, the interaction between the Earth and Moon has gradually slowed Earth's rotation over millions of years and has caused the Moon to drift away from Earth at a rate of about 3.8 centimeters per year. This process is known as tidal acceleration and has long-term implications for the length of our days and the stability of Earth's axial tilt, which influences our climate patterns."
+    "nickname": "Earth's Satellite",
+    "material": "Rock and dust",
+    "surfaceTemperature": {
+      "night": "-173°C",
+      "day": "127°C"
+    },
+    "weatherClimate": "No atmosphere, extreme temperature fluctuations",
+    "travelTime": "Approximately 238,855 miles from Earth; about 3 days with current technology",
+    "curiosa": [
+      "The Moon exerts a gravitational pull on Earth that significantly affects the planet's tides.",
+      "The tidal effect of the Moon causes slight but measurable deformations in the Earth's crust known as Earth tides.",
+      "The interaction between the Earth and Moon has gradually slowed Earth's rotation and caused the Moon to drift away from Earth.",
+      "The Moon has a diameter of about 3,474 kilometers (2,159 miles).",
+      "It is the fifth largest moon in the Solar System.",
+      "The far side of the Moon was first seen by humans in 1959 when the Soviet spacecraft Luna 3 transmitted photographs."
+    ]
   }
 ]
+

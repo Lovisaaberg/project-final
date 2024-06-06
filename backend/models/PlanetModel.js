@@ -43,7 +43,6 @@ const planetSchema = new Schema({
   ],
 });
 
-//The model (based entirely on all entries in the planetSchema)
 const PlanetModel = model("PlanetModel", planetSchema);
 
 export default PlanetModel;

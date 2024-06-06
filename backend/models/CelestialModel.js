@@ -7,18 +7,33 @@ const celestialSchema = new Schema({
     type: String,
     required: true,
   },
-  fact: {
+  nickname: {
     type: String,
     required: true,
   },
-  explanation: {
+  material: {
     type: String,
     required: true,
   },
-  additional_info: {
+  surfaceTemperature: {
+    type: Map,
+    of: String,
+    required: true,
+  },
+  weatherClimate: {
     type: String,
     required: true,
   },
+  travelTime: {
+    type: String,
+    required: true,
+  },
+  curiosa: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
 });
 
 const CelestialModel = model("CelestialModel", celestialSchema);
