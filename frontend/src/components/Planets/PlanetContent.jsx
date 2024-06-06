@@ -50,7 +50,7 @@ export const PlanetContent = ({ onePlanet }) => {
   return (
     <div>
       <PlanetPage>
-        <h1 className="space-mono-bold">{onePlanet.name}</h1>
+        <h1 className="space-mono-bold">{onePlanet.name.toUpperCase()}</h1>
         <PlanetImg src={planetImg} alt={onePlanet.name} />
         <p className="roboto-mono">Nickname: {onePlanet.nickname}</p>
         <p className="roboto-mono">Moons: {onePlanet.moons}</p>
