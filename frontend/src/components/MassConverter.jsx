@@ -3,19 +3,28 @@ import styled from "styled-components";
 
 const MassConverterFont = styled.div`
     background: #000000;
+
     h2.space-mono-bold {
       font-family: "Space Mono";
       color: #FFFFFF;
-    }
+    };
     p.roboto-mono {
       font-family: "Roboto Mono";
-    }
+    };
     input.roboto-mono {
+      font-style: italic;
       background: #000000;
       border: 2px solid #FFFFFF;
       border-radius: 5px;
+      padding: 5px;
       margin-right: 5px;
-    }
+      margin-bottom: 10px;
+    };
+    div.results {
+      background: #000000;
+      font-family: "Roboto Mono";
+      color: #FFE4C4;
+    };
   }`;
 
 const gravityFactors = {
@@ -62,20 +71,27 @@ export const MassConverter = () => {
   return (
     <div>
       <MassConverterFont>
-        <h2 className="space-mono-bold">TRY THE MASS CONVERTER:</h2>
+        <h2 className="space-mono-bold">TRY OUT THE MASS CONVERTER:</h2>
         <p className="roboto-mono">
-          Enter the weight of any object in kilograms to see its equivalent
-          weight on each planet.
+          Have you ever wondered how much you or your belongings would weigh on
+          different planets? With the Mass Converter, you can explore the
+          fascinating variations in weight caused by the different gravitational
+          forces of each celestial body in our solar system. Simply enter the
+          weight of any object in kilograms, and instantly find out its
+          equivalent weight on the planets in our solar system. Whether it's
+          your pet, a favorite item, or just your curiosity, this tool provides
+          a fun and educational way to understand the effects of gravity beyond
+          Earth. Try it now and see how your weight changes across the cosmos!
         </p>
         <input
           className="roboto-mono"
           type="number"
           value={weight}
           onChange={handleChange}
-          placeholder="Enter kilos in here"
+          placeholder="Enter kilograms here"
         />
         <button onClick={handleCalculate}>Calculate</button>
-        <div>
+        <div className="results">
           {Object.entries(results).map(([planet, weight]) => (
             <div key={planet}>
               {planet}: {weight} kilos
