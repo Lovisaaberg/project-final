@@ -23,8 +23,7 @@ export const HomeRoutes = () => {
       <Route path="/planets" element={<AllPlanets />} />
       <Route path="/planets/:planet" element={<Planet />} />
       <Route path="/massconverter" element={<MassConverter />} />
-      <Route path="/sun" element={<CelestialBodies />} />
-      <Route path="/moon" element={<CelestialBodies />} />
+      <Route path="/:name" element={<CelestialBodies />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

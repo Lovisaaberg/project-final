@@ -16,7 +16,6 @@ const CelestialContent = ({ oneBody }) => {
     <div>
       <SunAndMoonPage>
         <h1 className="space-mono-bold">The {oneBody.name}</h1>
-        <p className="roboto-mono">Name: {oneBody.name}</p>
         <p className="roboto-mono">Facts: {oneBody.fact}</p>
         <p className="roboto-mono">Explanation: {oneBody.explanation}</p>
         <p className="roboto-mono">Curiosa: {oneBody.additional_info}</p>

@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import CelestialContent from "./CelestialContent";
 
 export const CelestialBodies = () => {
-  const { celestialBody } = useParams();
+  const { name } = useParams();
   const [oneBody, setOneBody] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -31,7 +31,7 @@ export const CelestialBodies = () => {
       }
     };
     fetchOneBody();
-  }, [URL]);
+  }, [name, URL]);
 
   if (loading) {
     return <p>Loading celestial body...</p>;
