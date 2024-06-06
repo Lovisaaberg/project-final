@@ -1,7 +1,7 @@
 //Fetches all celestial bodies from the API
 
 import { useState, useEffect } from "react";
-import { NavLinks } from "./Navigation/NavLinks";
+import { NavLinks } from "../Navigation/NavLinks";
 
 export const AllCelestials = () => {
   const URL = `https://project-final-45vw.onrender.com/celestial/`;

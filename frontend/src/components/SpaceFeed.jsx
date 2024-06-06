@@ -1,5 +1,17 @@
 import { useEffect, useState } from "react";
 import { useSpaceFeedStore } from "../stores/useSpaceFeedStore";
+import styled from "styled-components";
+import { Button } from "./Button";
+
+const LikeButton = styled.button`
+background: #000000;
+color: #ffffff;
+border: 2px solid;
+padding: 8px;
+font-family: "Space Mono";
+font-weight: normal;
+border-radius: 20px;
+`
 
 export const SpaceFeed = () => {
   const {
@@ -9,10 +21,9 @@ export const SpaceFeed = () => {
     likeSpaceMessage,
     loading,
     error,
-
-  } = useSpaceFeedStore()
-  const [newMessage, setNewMessage] = useState("")
-  const [messageError, setMessageError] = useState("")
+  } = useSpaceFeedStore();
+  const [newMessage, setNewMessage] = useState("");
+  const [messageError, setMessageError] = useState("");
 
   useEffect(() => {
     fetchSpaceFeed();
@@ -27,14 +38,14 @@ export const SpaceFeed = () => {
     event.preventDefault();
 
     if (newMessage.length < 5 || newMessage.length > 140) {
-      setMessageError("Message must be between 5 and 140 characters")
-      return
+      setMessageError("Message must be between 5 and 140 characters");
+      return;
     }
 
-    postSpaceMessage(newMessage)
-    setNewMessage("")
-    setMessageError("")
-  }
+    postSpaceMessage(newMessage);
+    setNewMessage("");
+    setMessageError("");
+  };
 
   const handleLike = (messageId) => {
     likeSpaceMessage(messageId);
@@ -55,9 +66,9 @@ export const SpaceFeed = () => {
             onChange={handleNewMessage}
           />
         </label>
-        <button type="submit" disabled={loading}>
-          Post
-        </button>
+        <Button type="submit" disabled={loading}>
+          POST
+        </Button>
         {messageError && <p className="message-error">{messageError}</p>}
       </form>
 
@@ -69,12 +80,12 @@ export const SpaceFeed = () => {
         {spaceFeed && spaceFeed.length > 0 ? (
           spaceFeed.map((message) => (
             <li key={message._id}>
-              <p>{message.message}</p>
-              <button
+              <p className="roboto-mono">{message.message}</p>
+              <LikeButton
                 className="like-button"
                 onClick={() => handleLike(message._id)}>
-                Like ({message.likes})
-              </button>
+                🚀 ({message.likes})
+              </LikeButton>
             </li>
           ))
         ) : (

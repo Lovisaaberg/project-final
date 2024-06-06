@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { Button } from "./Button";
 
 const MassConverterFont = styled.div`
     background: #000000;
@@ -90,7 +91,7 @@ export const MassConverter = () => {
           onChange={handleChange}
           placeholder="Enter kilograms here"
         />
-        <button onClick={handleCalculate}>Calculate</button>
+        <Button onClick={handleCalculate}>CALCULATE</Button>
         <div className="results">
           {Object.entries(results).map(([planet, weight]) => (
             <div key={planet}>

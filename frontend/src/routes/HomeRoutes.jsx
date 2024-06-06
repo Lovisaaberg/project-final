@@ -1,12 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import { SpaceFeed } from "../components/SpaceFeed";
 import { MassConverter } from "../components/MassConverter";
-import { AllPlanets } from "../components/AllPlanets";
+import { AllPlanets } from "../components/Planets/AllPlanets";
 import { PlanetsCarousel } from "../components/PlanetsCarousel";
-import { Planet } from "../components/Planet";
-import { CelestialBodies } from "../components/CelestialBodies";
+import { Planet } from "../components/Planets/Planet";
+import { CelestialBodies } from "../components/Celestials/CelestialBodies";
 import { NotFoundPage } from "../components/NotFoundPage";
-
 
 export const HomeRoutes = () => {
   return (
@@ -28,4 +27,3 @@ export const HomeRoutes = () => {
     </Routes>
   );
 };
-

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { NavLinks } from "./Navigation/NavLinks"
+import { NavLinks } from "../Navigation/NavLinks"
 import styled from "styled-components";
 
 const Planets = styled.div`
