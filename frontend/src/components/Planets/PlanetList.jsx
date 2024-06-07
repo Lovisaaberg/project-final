@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 
 //array to store all planets route names
 const planets = [
+  "sun",
   "mercury",
   "venus",
   "earth",
+  "moon",
   "mars",
   "jupiter",
   "saturn",

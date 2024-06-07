@@ -3,9 +3,11 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import sunImg from "../assets/images/sun.png";
 import mercuryImg from "../assets/images/mercury.png";
 import venusImg from "../assets/images/venus.png";
 import tellusImg from "../assets/images/tellus.png";
+import moonImg from "../assets/images/moon.png";
 import marsImg from "../assets/images/mars.png";
 import jupiterImg from "../assets/images/jupiter.png";
 import saturnImg from "../assets/images/saturn.png";
@@ -19,9 +21,11 @@ import { Link } from "react-router-dom";
 //Länken ska vara inbakad i respektive PlanetImage
 
 const planets = [
+  { name: "Sun", image: sunImg },
   { name: "Mercury", image: mercuryImg },
   { name: "Venus", image: venusImg },
   { name: "Earth", image: tellusImg },
+  { name: "Moon", image: moonImg },
   { name: "Mars", image: marsImg },
   { name: "Jupiter", image: jupiterImg },
   { name: "Saturn", image: saturnImg },

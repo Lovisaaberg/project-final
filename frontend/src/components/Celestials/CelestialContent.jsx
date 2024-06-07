@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import  sunImg from "../../assets/images/sun.png";
-import  moonImg  from "../../assets/images/moon.png";
+import sunImg from "../../assets/images/sun.png";
+import moonImg from "../../assets/images/moon.png";
 
 const SunAndMoonPage = styled.div`
     background: #000000;
