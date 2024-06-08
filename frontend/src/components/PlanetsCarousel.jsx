@@ -16,10 +16,6 @@ import neptuneImg from "../assets/images/neptune.png";
 import plutoImg from "../assets/images/pluto.png";
 import { Link } from "react-router-dom";
 
-//Från PlanetsCarousel ska man hamna på planets/:name,
-//`/planets/${planet.name}` när man klickar på en planet
-//Länken ska vara inbakad i respektive PlanetImage
-
 const planets = [
   { name: "Sun", image: sunImg },
   { name: "Mercury", image: mercuryImg },
@@ -73,13 +69,23 @@ export const PlanetsCarousel = () => {
       <Slider {...settings}>
         {planets.map((planets, index) => (
           <Slide key={index} isCenter={index === currentSlide}>
-            <Link to={`/planets/${planets.name.toLowerCase()}`}>
-              <PlanetImage
-                src={planets.image}
-                alt={planets.name}
-                isCenter={index === currentSlide}
-              />
-            </Link>
+            {planets.name === "Sun" || planets.name === "Moon" ? (
+              <Link to={`/${planets.name.toLowerCase()}`}>
+                <PlanetImage
+                  src={planets.image}
+                  alt={planets.name}
+                  isCenter={index === currentSlide}
+                />
+              </Link>
+            ) : (
+              <Link to={`/planets/${planets.name.toLowerCase()}`}>
+                <PlanetImage
+                  src={planets.image}
+                  alt={planets.name}
+                  isCenter={index === currentSlide}
+                />
+              </Link>
+            )}
             <PlanetName>{planets.name}</PlanetName>
           </Slide>
         ))}
