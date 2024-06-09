@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
-import { useSpaceFeedStore } from "../stores/useSpaceFeedStore"
-import styled from "styled-components"
-import rocketIcon from "./../assets/icons/rocket.png"
-import rocketIconLiked from "./../assets/icons/rocket-filled.png"
-import { formatDistanceToNow } from "date-fns"
+import { useEffect, useState } from "react";
+import { useSpaceFeedStore } from "../stores/useSpaceFeedStore";
+import styled from "styled-components";
+import rocketIcon from "./../assets/icons/rocket.png";
+import rocketIconLiked from "./../assets/icons/rocket-filled.png";
+import { formatDistanceToNow } from "date-fns";
 
 const FeedContainer = styled.div`
   width: 100%;
@@ -48,7 +48,7 @@ const FeedContainer = styled.div`
       padding: 16px 16px;
     }
   }
-`
+`;
 
 const Form = styled.form`
   display: flex;
@@ -57,12 +57,12 @@ const Form = styled.form`
   gap: 10px;
   width: 100%;
   max-width: 660px;
-`
+`;
 
 const CharacterCount = styled.div`
   text-align: right;
   width: 100%;
-`
+`;
 
 const Button = styled.button`
   width: 150px;
@@ -92,7 +92,7 @@ const Button = styled.button`
     font-size: var(--font-size-large);
     display: block;
   }
-`
+`;
 
 const LikeButton = styled.button`
   background: #161822;
@@ -100,11 +100,11 @@ const LikeButton = styled.button`
   font-family: var(--font-family-text);
   border: none;
   cursor: pointer;
-`
+`;
 const Icon = styled.img`
   width: 30px;
   height: 30px;
-`
+`;
 
 const MessageContainer = styled.div`
   width: 100%;
@@ -142,14 +142,14 @@ const MessageContainer = styled.div`
       text-align: left;
     }
   }
-`
+`;
 
 const Details = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: end;
   background-color: #161822;
-`
+`;
 
 export const SpaceFeed = () => {
   const {
@@ -159,72 +159,72 @@ export const SpaceFeed = () => {
     likeSpaceMessage,
     loading,
     error,
-  } = useSpaceFeedStore()
-  const [newMessage, setNewMessage] = useState("")
-  const [messageError, setMessageError] = useState("")
-  const [likedMessages, setLikedMessages] = useState({})
-  const [remainingChars, setRemainingChars] = useState(140)
+  } = useSpaceFeedStore();
+  const [newMessage, setNewMessage] = useState("");
+  const [messageError, setMessageError] = useState("");
+  const [likedMessages, setLikedMessages] = useState({});
+  const [remainingChars, setRemainingChars] = useState(140);
 
   useEffect(() => {
-    fetchSpaceFeed()
+    fetchSpaceFeed();
 
     // Retrieve liked messages from local storage
-    const storedLikedMessages = localStorage.getItem("likedMessages")
+    const storedLikedMessages = localStorage.getItem("likedMessages");
     if (storedLikedMessages) {
-      setLikedMessages(JSON.parse(storedLikedMessages))
+      setLikedMessages(JSON.parse(storedLikedMessages));
     }
-  }, [fetchSpaceFeed])
+  }, [fetchSpaceFeed]);
 
   // Update liked status for each message when fetching the space feed
   useEffect(() => {
     if (spaceFeed && spaceFeed.length > 0) {
       const initialLikedMessages = spaceFeed.reduce((acc, message) => {
-        acc[message._id] = message.likes > 0
-        return acc
-      }, {})
-      setLikedMessages(initialLikedMessages)
+        acc[message._id] = message.likes > 0;
+        return acc;
+      }, {});
+      setLikedMessages(initialLikedMessages);
     }
-  }, [spaceFeed])
+  }, [spaceFeed]);
 
   const handleNewMessage = (event) => {
-    const message = event.target.value
-    setNewMessage(message)
-    setMessageError("")
+    const message = event.target.value;
+    setNewMessage(message);
+    setMessageError("");
 
-    const remaining = 140 - message.length
-    setRemainingChars(remaining)
-  }
+    const remaining = 140 - message.length;
+    setRemainingChars(remaining);
+  };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     if (newMessage.length < 5 || newMessage.length > 140) {
-      setMessageError("Message must be between 5 and 140 characters")
-      return
+      setMessageError("Message must be between 5 and 140 characters");
+      return;
     }
 
-    postSpaceMessage(newMessage)
-    setNewMessage("")
-    setMessageError("")
-    setRemainingChars(140)
-  }
+    postSpaceMessage(newMessage);
+    setNewMessage("");
+    setMessageError("");
+    setRemainingChars(140);
+  };
 
   const handleLike = (messageId) => {
-    likeSpaceMessage(messageId)
+    likeSpaceMessage(messageId);
     setLikedMessages((prevLikedMessages) => {
       const updatedLikedMessages = {
         ...prevLikedMessages,
         [messageId]: !prevLikedMessages[messageId],
-      }
+      };
 
       // Save liked messages to local storage
       localStorage.setItem(
         "likedMessages",
         JSON.stringify(updatedLikedMessages)
-      )
-      return updatedLikedMessages
-    })
-  }
+      );
+      return updatedLikedMessages;
+    });
+  };
 
   return (
     <FeedContainer>
@@ -287,7 +287,7 @@ export const SpaceFeed = () => {
         </ul>
       </MessageContainer>
     </FeedContainer>
-  )
-}
+  );
+};
 
-export default SpaceFeed
+export default SpaceFeed;

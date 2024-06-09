@@ -1,20 +1,23 @@
-import styled from "styled-components"
-import sunImg from "../../assets/images/sun.png"
-import moonImg from "../../assets/images/moon.png"
+import styled from "styled-components";
+import sunImg from "../../assets/images/sun.png";
+import moonImg from "../../assets/images/moon.png";
 
 const SunAndMoonPage = styled.div`
-  background: #000000;
-  h1.space-mono-bold {
-    font-family: "Space Mono";
+  h1 {
     color: #ffffff;
   }
-  p.roboto-mono {
-    font-family: "Roboto Mono";
+  p {
+    color: #ffffff;
   }
-`
+`;
 
 const CelestialContent = ({ oneBody }) => {
-  const imgSrc = oneBody.name.toLowerCase() === "sun" ? sunImg : moonImg
+  const imgSrc = oneBody.name.toLowerCase() === "sun" ? sunImg : moonImg;
+  const surfaceTemperature = oneBody.surfaceTemperature;
+
+  const temperatureEntries = surfaceTemperature
+    ? Object.entries(surfaceTemperature)
+    : [];
 
   return (
     <div>
@@ -23,13 +26,34 @@ const CelestialContent = ({ oneBody }) => {
         <img src={imgSrc} alt={oneBody.name} />
         <p>Nickname: {oneBody.nickname}</p>
         <p>Material: {oneBody.material}</p>
-        <p>Surface Temperature: {oneBody.surfaceTemperature}</p>
+        {surfaceTemperature && (
+          <>
+            {typeof surfaceTemperature === "string" ? (
+              <p>Surface temperature: {surfaceTemperature}</p>
+            ) : (
+              <>
+                {surfaceTemperature.day && (
+                  <p>Day temperature: {surfaceTemperature.day}</p>
+                )}
+                {surfaceTemperature.night && (
+                  <p>Night temperature: {surfaceTemperature.night}</p>
+                )}
+                {surfaceTemperature.core && (
+                  <p>Core temperature: {surfaceTemperature.core}</p>
+                )}
+                {surfaceTemperature.surface && (
+                  <p>Surface temperature: {surfaceTemperature.surface}</p>
+                )}
+              </>
+            )}
+          </>
+        )}
         <p>Weather Climate: {oneBody.weatherClimate}</p>
         <p>Travel time: {oneBody.travelTime}</p>
         <p>Curiosa: {oneBody.curiosa}</p>
       </SunAndMoonPage>
     </div>
-  )
-}
+  );
+};
 
-export default CelestialContent
+export default CelestialContent;
