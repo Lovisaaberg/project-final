@@ -1,53 +1,49 @@
-
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { PlanetContent } from "./PlanetContent";
-import { PlanetList } from "./PlanetList";
-
 
 export const Planet = () => {
-  const { planet } = useParams()
-  const [onePlanet, setOnePlanet] = useState({})
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-  const URL = `https://project-final-45vw.onrender.com/planets/${planet}`
+  const { planet } = useParams();
+  const [onePlanet, setOnePlanet] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const URL = `https://project-final-45vw.onrender.com/planets/${planet}`;
 
   useEffect(() => {
     const fetchOnePlanet = async () => {
-      setLoading(true)
-      setError(null)
+      setLoading(true);
+      setError(null);
 
       try {
-        const response = await fetch(URL)
+        const response = await fetch(URL);
         if (!response.ok) {
           throw new Error(
             `Failed to fetch the requested planet, reload page and try again`
-          )
+          );
         }
-        const data = await response.json()
-        setOnePlanet(data)
-        console.log("planets", data)
+        const data = await response.json();
+
+        setOnePlanet(data);
       } catch (error) {
-        setError(error.message)
+        setError(error);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
-    fetchOnePlanet()
-  }, [planet])
+    };
+    fetchOnePlanet();
+  }, [planet]);
 
   if (loading) {
-    return <p>Loading planet...</p>
+    return <p>Loading planet...</p>;
   }
 
   if (error) {
-    return <p>{error}</p>
+    return <p>{error.message}</p>;
   }
 
   return (
-    <div>
+    <>
       <PlanetContent onePlanet={onePlanet} />
-      <PlanetList />
-    </div>
-  )
-}
+    </>
+  );
+};

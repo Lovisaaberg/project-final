@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import sunImg from "../../assets/images/sun.png";
 import moonImg from "../../assets/images/moon.png";
+import PlanetNavigation from "../Planets/PlanetNavigation";
 
 const SunAndMoonPage = styled.div`
   h1 {
@@ -52,6 +53,7 @@ const CelestialContent = ({ oneBody }) => {
         <p>Travel time: {oneBody.travelTime}</p>
         <p>Curiosa: {oneBody.curiosa}</p>
       </SunAndMoonPage>
+      <PlanetNavigation />
     </div>
   );
 };

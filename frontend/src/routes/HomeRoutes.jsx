@@ -1,10 +1,10 @@
-import { Routes, Route } from "react-router-dom"
-import { MassConverter } from "../components/MassConverter"
-import { AllPlanets } from "../components/Planets/AllPlanets"
-import { Planet } from "../components/Planets/Planet"
-import { CelestialBodies } from "../components/Celestials/CelestialBodies"
-import { NotFoundPage } from "../components/NotFoundPage"
-import { LandingPage } from "../components/LandingPage"
+import { Routes, Route } from "react-router-dom";
+import { MassConverter } from "../components/MassConverter";
+import { AllPlanets } from "../components/Planets/AllPlanets";
+import { Planet } from "../components/Planets/Planet";
+import { CelestialBodies } from "../components/Celestials/CelestialBodies";
+import { NotFoundPage } from "../components/NotFoundPage";
+import { LandingPage } from "../components/LandingPage";
 
 export const HomeRoutes = () => {
   return (
@@ -16,5 +16,5 @@ export const HomeRoutes = () => {
       <Route path="/:name" element={<CelestialBodies />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
-  )
-}
+  );
+};

@@ -8,6 +8,7 @@ import saturnImg from "../../assets/images/saturn.png";
 import uranusImg from "../../assets/images/uranus.png";
 import neptuneImg from "../../assets/images/neptune.png";
 import plutoImg from "../../assets/images/pluto.png";
+import PlanetNavigation from "./PlanetNavigation";
 
 const PlanetPage = styled.div`
   h1 {
@@ -24,25 +25,20 @@ const PlanetImg = styled.img`
 `;
 
 const planetImages = {
-  mercury: mercuryImg,
-  venus: venusImg,
-  tellus: tellusImg,
-  mars: marsImg,
-  jupiter: jupiterImg,
-  saturn: saturnImg,
-  uranus: uranusImg,
-  neptune: neptuneImg,
-  pluto: plutoImg,
+  Mercury: mercuryImg,
+  Venus: venusImg,
+  Tellus: tellusImg,
+  Mars: marsImg,
+  Jupiter: jupiterImg,
+  Saturn: saturnImg,
+  Uranus: uranusImg,
+  Neptune: neptuneImg,
+  Pluto: plutoImg,
 };
 
 export const PlanetContent = ({ onePlanet }) => {
   const surfaceTemperature = onePlanet.surfaceTemperature;
-
-  const temperatureEntries = surfaceTemperature
-    ? Object.entries(surfaceTemperature)
-    : [];
-
-  const planetImg = planetImages[onePlanet.name.toLowerCase()];
+  const planetImg = planetImages[onePlanet.name];
 
   return (
     <div>
@@ -82,6 +78,7 @@ export const PlanetContent = ({ onePlanet }) => {
         <p>Travel Time: {onePlanet.travelTime}</p>
         <p>Curiosa: {onePlanet.curiosa}</p>
       </PlanetPage>
+      <PlanetNavigation />
     </div>
   );
 };
