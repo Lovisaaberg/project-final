@@ -27,17 +27,17 @@ const PlanetImage = styled.img`
 `;
 
 const planets = [
+  { name: "sun", image: sunImg },
   { name: "mercury", image: mercuryImg },
   { name: "venus", image: venusImg },
   { name: "tellus", image: tellusImg },
+  { name: "moon", image: moonImg },
   { name: "mars", image: marsImg },
   { name: "jupiter", image: jupiterImg },
   { name: "saturn", image: saturnImg },
   { name: "uranus", image: uranusImg },
   { name: "neptune", image: neptuneImg },
   { name: "pluto", image: plutoImg },
-  { name: "sun", image: sunImg },
-  { name: "moon", image: moonImg },
 ];
 
 export const PlanetNavigation = () => {

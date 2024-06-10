@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { PlanetNavigation } from "./PlanetNavigation";
 import mercuryImg from "../../assets/images/mercury.png";
 import venusImg from "../../assets/images/venus.png";
 import tellusImg from "../../assets/images/tellus.png";
@@ -12,7 +13,7 @@ import plutoImg from "../../assets/images/pluto.png";
 import GlobalStyles from "../GlobalStyles";
 import Rocket from "../../assets/icons/travelTimeRocket.png";
 import leftarrow from "../../assets/icons/leftarrow.png";
-import { PlanetNavigation } from "./PlanetNavigation";
+
 
 const BackLink = styled(NavLink)`
   position: absolute;

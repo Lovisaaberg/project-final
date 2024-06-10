@@ -46,9 +46,9 @@ const Slide = styled.div`
 `;
 
 const PlanetImage = styled.img`
-  width: ${(props) => (props.saturnimg ? "270px" : "100%")};
-  height: ${(props) => (props.saturnimg ? "130px" : "100%")};
-  margin: ${(props) => (props.saturnimg ? "0px -20px" : "0 auto")};
+  width: ${(props) => (props.saturnimg ? "280px" : "100%")};
+  height: ${(props) => (props.saturnimg ? "135px" : "100%")};
+  margin: ${(props) => (props.saturnimg ? "0px -10px -20px -30px" : "0 auto")};
   transition: transform 0.5s;
   transform: ${({ isCenter }) => (isCenter ? "scale(1.0)" : "scale(0.9)")};
 

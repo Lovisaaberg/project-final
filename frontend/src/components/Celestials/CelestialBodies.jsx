@@ -42,15 +42,8 @@ export const CelestialBodies = () => {
   }
 
   return (
-    <div>
-      <div>
-        <Link to="/">
-          <p>Back to spaceport</p>
-        </Link>
-      </div>
       <div>
         <CelestialContent oneBody={oneBody} />
       </div>
-    </div>
   );
 };
