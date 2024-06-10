@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
@@ -80,7 +81,19 @@ const Arrow = styled.button`
 `;
 
 export const PlanetsCarousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const CustomPrevArrow = ({ onClick }) => (
+    <Arrow direction="left" onClick={onClick}>
+      <img src={prevArrowIcon} alt="Previous" />
+    </Arrow>
+  )
+
+  const CustomNextArrow = ({ onClick }) => (
+    <Arrow direction="right" onClick={onClick}>
+      <img src={nextArrowIcon} alt="Next" />
+    </Arrow>
+  )
 
   const CustomPrevArrow = ({ onClick }) => (
     <Arrow direction="left" onClick={onClick}>
@@ -125,7 +138,7 @@ export const PlanetsCarousel = () => {
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
     beforeChange: (current, next) => setCurrentSlide(next),
-  };
+  }
 
   return (
     <CarouselContainer>
