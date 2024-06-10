@@ -54,9 +54,18 @@ if (process.env.RESET_DATABASE === "true") {
 }
 
 // Route handler for the root
-app.get("/", (req, res) => {
-  const endpoints = expressListEndpoints(app);
-  res.json(endpoints);
+app.get("/", async (req, res) => {
+  try {
+    const endpoints = expressListEndpoints(app);
+
+    if (endpoints.length > 0) {
+      res.json(endpoints);
+    } else {
+      res.status(404).send("Site not availeble at the moment.");
+    }
+  } catch (error) {
+    res.status(500).send(`An error occurred, can't load site.`);
+  }
 });
 
 // GET all planets
@@ -142,6 +151,9 @@ app.get("/space-feed", async (req, res) => {
       response: spaceFeed,
       message: "Space messages successfully retrieved",
     });
+    if (spaceFeed) {
+      res.json(spaceFeed);
+    }
   } catch (error) {
     res.status(400).json({
       success: false,
