@@ -85,8 +85,8 @@ app.get("/planets", async (req, res) => {
 
 // GET a specific planet
 app.get("/planets/:planet", async (req, res) => {
-  const planet = req.params.planet;
   try {
+    const planet = req.params.planet;
     const onePlanet = await PlanetModel.findOne({
       name: { $regex: planet, $options: "i" },
     }).exec();
@@ -109,8 +109,9 @@ app.get("/planets/:planet", async (req, res) => {
 
 // GET all celestial bodies
 app.get("/celestial", async (req, res) => {
-  const allCelestials = await CelestialModel.find();
   try {
+    const allCelestials = await CelestialModel.find();
+
     if (allCelestials) {
       res.json(allCelestials);
     } else {
@@ -123,8 +124,8 @@ app.get("/celestial", async (req, res) => {
 
 //GET Sun, Moon and potentially other celestial bodies
 app.get("/celestial/:name", async (req, res) => {
-  const celestial = req.params.name;
   try {
+    const celestial = req.params.name;
     const getCelestial = await CelestialModel.findOne({
       name: { $regex: celestial, $options: "i" },
     });
@@ -140,12 +141,12 @@ app.get("/celestial/:name", async (req, res) => {
 
 //Route handler to show space messages in descending order from when created, limit to 10 messages
 app.get("/space-feed", async (req, res) => {
-  const spaceFeed = await SpaceFeed.find()
-    .sort({ createdAt: "desc" })
-    .limit(10)
-    .exec();
-
   try {
+    const spaceFeed = await SpaceFeed.find()
+      .sort({ createdAt: "desc" })
+      .limit(10)
+      .exec();
+
     res.status(201).json({
       success: true,
       response: spaceFeed,
@@ -165,12 +166,10 @@ app.get("/space-feed", async (req, res) => {
 
 //Route handler to post messages in space feed
 app.post("/space-feed", async (req, res) => {
-  const { message } = req.body; //Retrieve users message to our API endpoint
-
-  //Use the mongoose model to create the database entry
-  const spaceFeed = new SpaceFeed({ message });
-
   try {
+    const { message } = req.body;
+
+    const spaceFeed = new SpaceFeed({ message });
     const newSpaceFeed = await spaceFeed.save();
     res.status(201).json({
       success: true,
@@ -188,15 +187,13 @@ app.post("/space-feed", async (req, res) => {
 
 //Route handler to like space messages
 app.post("/space-feed/:messageId/like", async (req, res) => {
-  const { messageId } = req.params;
-
   try {
+    const { messageId } = req.params;
     const likeMessage = await SpaceFeed.findByIdAndUpdate(
       messageId,
       { $inc: { likes: 1 } },
       { new: true, runValidators: true }
     );
-
     if (!likeMessage) {
       return res.status(404).json({
         success: false,
