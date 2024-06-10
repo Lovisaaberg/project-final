@@ -21,8 +21,8 @@ const NavigationContainer = styled.div`
 `;
 
 const PlanetImage = styled.img`
-  height: 50px;
-  width: 50px;
+  height: ${(props) => (props.saturnimg ? "50px" : "50px")};
+  width: ${(props) => (props.saturnimg ? "95px" : "50px")};
   cursor: pointer;
 `;
 
@@ -40,14 +40,14 @@ const planets = [
   { name: "moon", image: moonImg },
 ];
 
-const getPlanetPath = (planetName) => {
-  if (planetName === "sun" || planetName === "moon") {
-    return `/${planetName}`;
-  }
-  return `/planets/${planetName}`;
-};
+export const PlanetNavigation = () => {
+  const getPlanetPath = (planetName) => {
+    if (planetName === "sun" || planetName === "moon") {
+      return `/${planetName}`;
+    }
+    return `/planets/${planetName}`;
+  };
 
-const PlanetNavigation = () => {
   const location = useLocation();
   const currentPlanetName = location.pathname.split("/").pop();
   const currentPlanetIndex = planets.findIndex(
@@ -67,14 +67,19 @@ const PlanetNavigation = () => {
   return (
     <NavigationContainer>
       <Link to={getPlanetPath(prevPlanet.name)}>
-        <PlanetImage src={prevPlanet.image} alt={prevPlanet.name} />
+        <PlanetImage
+          src={prevPlanet.image}
+          alt={prevPlanet.name}
+          saturnimg={prevPlanet.name === "saturn"}
+        />
       </Link>
       <Link to={getPlanetPath(nextPlanet.name)}>
-        <PlanetImage src={nextPlanet.image} alt={nextPlanet.name} />
+        <PlanetImage
+          src={nextPlanet.image}
+          alt={nextPlanet.name}
+          saturnimg={nextPlanet.name === "saturn"}
+        />
       </Link>
     </NavigationContainer>
   );
 };
-
-export default PlanetNavigation;
-

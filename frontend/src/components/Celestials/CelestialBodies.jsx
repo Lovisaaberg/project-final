@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import CelestialContent from "./CelestialContent";
+import { CelestialContent } from "./CelestialContent";
 
 export const CelestialBodies = () => {
   const { name } = useParams();

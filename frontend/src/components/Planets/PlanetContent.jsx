@@ -1,18 +1,18 @@
-import { NavLink } from "react-router-dom"
-import styled from "styled-components"
-import mercuryImg from "../../assets/images/mercury.png"
-import venusImg from "../../assets/images/venus.png"
-import tellusImg from "../../assets/images/tellus.png"
-import marsImg from "../../assets/images/mars.png"
-import jupiterImg from "../../assets/images/jupiter.png"
-import saturnImg from "../../assets/images/saturn.png"
-import uranusImg from "../../assets/images/uranus.png"
-import neptuneImg from "../../assets/images/neptune.png"
-import plutoImg from "../../assets/images/pluto.png"
-import GlobalStyles from "../GlobalStyles"
-import Rocket from "../../assets/icons/travelTimeRocket.png"
-import leftarrow from "../../assets/icons/leftarrow.png"
-import PlanetNavigation from "./PlanetNavigation";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+import mercuryImg from "../../assets/images/mercury.png";
+import venusImg from "../../assets/images/venus.png";
+import tellusImg from "../../assets/images/tellus.png";
+import marsImg from "../../assets/images/mars.png";
+import jupiterImg from "../../assets/images/jupiter.png";
+import saturnImg from "../../assets/images/saturn.png";
+import uranusImg from "../../assets/images/uranus.png";
+import neptuneImg from "../../assets/images/neptune.png";
+import plutoImg from "../../assets/images/pluto.png";
+import GlobalStyles from "../GlobalStyles";
+import Rocket from "../../assets/icons/travelTimeRocket.png";
+import leftarrow from "../../assets/icons/leftarrow.png";
+import { PlanetNavigation } from "./PlanetNavigation";
 
 const BackLink = styled(NavLink)`
   position: absolute;
@@ -25,12 +25,12 @@ const BackLink = styled(NavLink)`
   font-size: 16px;
   display: flex;
   align-items: center;
-`
+`;
 
 const LeftArrow = styled.img`
   width: 20px;
   margin-right: 8px;
-`
+`;
 
 const PlanetContainer = styled.div`
   margin: 20px 20px;
@@ -38,7 +38,7 @@ const PlanetContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const PlanetPage = styled.div`
   font-family: var(--font-family-headlines);
@@ -55,7 +55,7 @@ const PlanetPage = styled.div`
     text-align: center;
     margin-top: 0px;
   }
-`
+`;
 
 const PlanetHeadline = styled.h1`
   font-size: var(--font-size-h1-mob);
@@ -65,12 +65,12 @@ const PlanetHeadline = styled.h1`
   @media (min-width: 768px) {
     font-size: var(--font-size-h1-desktop);
   }
-`
+`;
 
 const PlanetImg = styled.img`
   width: 300px;
   margin: 20px auto;
-`
+`;
 
 const PlanetDetails = styled.div`
   font-family: var(--font-family-text);
@@ -98,7 +98,7 @@ const PlanetDetails = styled.div`
       font-size: var(--font-size-large);
     }
   }
-`
+`;
 
 const TextBox = styled.div`
   background-color: var(--textbox-background);
@@ -109,7 +109,7 @@ const TextBox = styled.div`
   img {
     margin-top: 8px;
   }
-`
+`;
 
 const planetImages = {
   Mercury: mercuryImg,
@@ -126,7 +126,6 @@ const planetImages = {
 export const PlanetContent = ({ onePlanet }) => {
   const surfaceTemperature = onePlanet.surfaceTemperature;
   const planetImg = planetImages[onePlanet.name];
-
 
   return (
     <>
@@ -220,6 +219,5 @@ export const PlanetContent = ({ onePlanet }) => {
       </PlanetContainer>
       <PlanetNavigation />
     </>
-  )
-}
-
+  );
+};

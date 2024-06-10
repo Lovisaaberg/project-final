@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import sunImg from "../../assets/images/sun.png";
 import moonImg from "../../assets/images/moon.png";
-import PlanetNavigation from "../Planets/PlanetNavigation";
+import { PlanetNavigation } from "../Planets/PlanetNavigation";
 
 const SunAndMoonPage = styled.div`
   h1 {
@@ -12,7 +12,7 @@ const SunAndMoonPage = styled.div`
   }
 `;
 
-const CelestialContent = ({ oneBody }) => {
+export const CelestialContent = ({ oneBody }) => {
   const imgSrc = oneBody.name.toLowerCase() === "sun" ? sunImg : moonImg;
   const surfaceTemperature = oneBody.surfaceTemperature;
 
@@ -58,4 +58,4 @@ const CelestialContent = ({ oneBody }) => {
   );
 };
 
-export default CelestialContent;
+
