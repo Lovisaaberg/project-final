@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import { CelestialContent } from "./CelestialContent"
+import { Loading } from "../Loading"
 
 export const CelestialBodies = () => {
   const { name } = useParams()
@@ -33,7 +34,7 @@ export const CelestialBodies = () => {
   }, [name])
 
   if (loading) {
-    return <p>Loading celestial body...</p>
+    return <Loading />
   }
 
   if (error) {

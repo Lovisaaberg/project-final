@@ -5,6 +5,7 @@ import rocketIcon from "./../assets/icons/rocket.png"
 import rocketIconLiked from "./../assets/icons/rocket-filled.png"
 import { formatDistanceToNow } from "date-fns"
 import { Button } from "./Navigation/Button.jsx"
+import { Loading } from "../components/Loading.jsx"
 
 const FeedContainer = styled.div`
   width: 100%;
@@ -226,7 +227,7 @@ export const SpaceFeed = () => {
 
       {messageError && <p>{messageError}</p>}
 
-      {loading && <p>Loading...</p>}
+      {loading && <Loading/>}
 
       <MessageContainer>
         <ul>

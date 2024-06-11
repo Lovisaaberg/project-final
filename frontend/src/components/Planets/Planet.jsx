@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { PlanetContent } from "./PlanetContent"
+import { Loading } from "../Loading"
 
 export const Planet = () => {
   const { planet } = useParams()
@@ -34,7 +35,7 @@ export const Planet = () => {
   }, [planet])
 
   if (loading) {
-    return <p>Loading planet...</p>
+    return <Loading />
   }
 
   if (error) {

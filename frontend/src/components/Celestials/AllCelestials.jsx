@@ -30,7 +30,7 @@ export const AllCelestials = () => {
   }, [])
 
   if (loading) {
-    return <div>Loading celestial bodies...</div>
+    return <div>Loading celestial data....</div>
   }
 
   if (error) {
