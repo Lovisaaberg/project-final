@@ -23,7 +23,6 @@ export const CelestialBodies = () => {
         }
         const data = await response.json();
         setOneBody(data);
-        console.log(data);
       } catch (error) {
         setError(error.message);
       } finally {
