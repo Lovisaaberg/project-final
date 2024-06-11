@@ -27,8 +27,7 @@ const BackLink = styled(NavLink)`
   @media (min-width: 768px) {
     display: none;
   }
-`
-
+`;
 
 const LeftArrow = styled.img`
   width: 20px;
@@ -84,7 +83,7 @@ const ImageContainer = styled.div`
     grid-row: 1 / 2;
     margin-bottom: 0;
   }
-`
+`;
 
 const PlanetImgMob = styled.img`
   width: 100%;
@@ -94,7 +93,7 @@ const PlanetImgMob = styled.img`
   @media (min-width: 830px) {
     display: none;
   }
-`
+`;
 
 const PlanetImg = styled.img`
   width: 100%;
@@ -106,8 +105,7 @@ const PlanetImg = styled.img`
   @media (max-width: 830px) {
     display: none;
   }
-`
-
+`;
 
 const PlanetDetails = styled.div`
   font-family: var(--font-family-text);
@@ -156,7 +154,7 @@ const TextBoxContainer = styled.div`
     display: contents;
     justify-content: space-between;
   }
-`
+`;
 
 const TextBox = styled.div`
   background-color: var(--textbox-background);
@@ -165,11 +163,11 @@ const TextBox = styled.div`
   border-radius: 8px;
   width: 100%;
   width: 280px;
-`
+`;
 
 const CuriosaContainer = styled.div`
   grid-column: 1 / -1;
-`
+`;
 
 const CuriosaTextBox = styled.div`
   background-color: var(--textbox-background);
@@ -182,7 +180,7 @@ const CuriosaTextBox = styled.div`
     width: auto;
     max-width: 1100px;
   }
-`
+`;
 
 const LeftColumn = styled.div`
   display: flex;
@@ -196,7 +194,7 @@ const LeftColumn = styled.div`
     grid-row: 1;
     align-items: flex-start;
   }
-`
+`;
 
 const RightColumn = styled.div`
   display: flex;
@@ -222,13 +220,11 @@ const planetImages = {
   Uranus: uranusImg,
   Neptune: neptuneImg,
   Pluto: plutoImg,
-}
+};
 
 export const PlanetContent = ({ onePlanet }) => {
-
-  const surfaceTemperature = onePlanet.surfaceTemperature
-  const planetImg = planetImages[onePlanet.name]
-
+  const surfaceTemperature = onePlanet.surfaceTemperature;
+  const planetImg = planetImages[onePlanet.name];
 
   return (
     <>
@@ -331,6 +327,5 @@ export const PlanetContent = ({ onePlanet }) => {
       </PlanetContainer>
       <PlanetNavigation />
     </>
-  )
-}
-
+  );
+};
