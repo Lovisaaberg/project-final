@@ -1,48 +1,48 @@
-import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { CelestialContent } from "./CelestialContent";
+import { useState, useEffect } from "react"
+import { useParams, Link } from "react-router-dom"
+import { CelestialContent } from "./CelestialContent"
 
 export const CelestialBodies = () => {
-  const { name } = useParams();
-  const [oneBody, setOneBody] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const URL = `https://project-final-45vw.onrender.com/celestial/${name}`;
+  const { name } = useParams()
+  const [oneBody, setOneBody] = useState({})
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const URL = `https://project-final-45vw.onrender.com/celestial/${name}`
 
   useEffect(() => {
     const fetchOneBody = async () => {
-      setLoading(true);
-      setError(null);
+      setLoading(true)
+      setError(null)
 
       try {
-        const response = await fetch(URL);
+        const response = await fetch(URL)
         if (!response.ok) {
           throw new Error(
             `Failed to fetch any celestial body, reload page and try again.`
-          );
+          )
         }
-        const data = await response.json();
-        setOneBody(data);
+        const data = await response.json()
+        setOneBody(data)
       } catch (error) {
-        setError(error.message);
+        setError(error.message)
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
-    fetchOneBody();
-  }, [name]);
+    }
+    fetchOneBody()
+  }, [name])
 
   if (loading) {
-    return <p>Loading celestial body...</p>;
+    return <p>Loading celestial body...</p>
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return <p>{error}</p>
   }
 
   return (
-      <div>
-        <CelestialContent oneBody={oneBody} />
-      </div>
-  );
-};
+    <div>
+      <CelestialContent oneBody={oneBody} />
+    </div>
+  )
+}

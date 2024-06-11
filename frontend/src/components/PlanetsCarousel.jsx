@@ -137,7 +137,8 @@ export const PlanetsCarousel = () => {
                 planet.name === "sun" || planet.name === "moon"
                   ? `/${planet.name}`
                   : `/planets/${planet.name}`
-              }>
+              }
+            >
               <PlanetImage
                 src={planet.image}
                 alt={planet.name}

@@ -1,10 +1,10 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import sunImg from "../../assets/images/sun.png";
-import moonImg from "../../assets/images/moon.png";
-import { PlanetNavigation } from "../Planets/PlanetNavigation";
-import GlobalStyles from "../GlobalStyles";
-import leftArrow from "../../assets/icons/leftarrow.png";
+import { NavLink } from "react-router-dom"
+import styled from "styled-components"
+import sunImg from "../../assets/images/sun.png"
+import moonImg from "../../assets/images/moon.png"
+import { PlanetNavigation } from "../Planets/PlanetNavigation"
+import GlobalStyles from "../GlobalStyles"
+import leftArrow from "../../assets/icons/leftarrow.png"
 
 const BackLink = styled(NavLink)`
   position: absolute;
@@ -17,12 +17,12 @@ const BackLink = styled(NavLink)`
   font-size: 16px;
   display: flex;
   align-items: center;
-`;
+`
 
 const LeftArrow = styled.img`
   width: 20px;
   margin-right: 8px;
-`;
+`
 
 const CelestialContainer = styled.div`
   margin: 20px 20px;
@@ -30,7 +30,7 @@ const CelestialContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const CelestialPage = styled.div`
   font-family: var(--font-family-headlines);
@@ -47,7 +47,7 @@ const CelestialPage = styled.div`
     text-align: center;
     margin-top: 0px;
   }
-`;
+`
 
 const CelestialHeadline = styled.h1`
   font-size: var(--font-size-h1-mob);
@@ -57,12 +57,12 @@ const CelestialHeadline = styled.h1`
   @media (min-width: 768px) {
     font-size: var(--font-size-h1-desktop);
   }
-`;
+`
 
 const CelestialImg = styled.img`
   width: 300px;
   margin: 20px auto;
-`;
+`
 
 const CelestialDetails = styled.div`
   font-family: var(--font-family-text);
@@ -90,7 +90,7 @@ const CelestialDetails = styled.div`
       font-size: var(--font-size-large);
     }
   }
-`;
+`
 
 const TextBox = styled.div`
   background-color: var(--textbox-background);
@@ -101,21 +101,21 @@ const TextBox = styled.div`
   img {
     margin-top: 8px;
   }
-`;
+`
 
 const celestialImages = {
   Sun: sunImg,
   Moon: moonImg,
-};
+}
 
 export const CelestialContent = ({ oneBody }) => {
-  const imgSrc = oneBody.name.toLowerCase() === "sun" ? sunImg : moonImg;
-  const surfaceTemperature = oneBody.surfaceTemperature;
-  const celestialImg = celestialImages[oneBody.name];
+  const imgSrc = oneBody.name.toLowerCase() === "sun" ? sunImg : moonImg
+  const surfaceTemperature = oneBody.surfaceTemperature
+  const celestialImg = celestialImages[oneBody.name]
 
   const temperatureEntries = surfaceTemperature
     ? Object.entries(surfaceTemperature)
-    : [];
+    : []
 
   return (
     <>
@@ -191,5 +191,5 @@ export const CelestialContent = ({ oneBody }) => {
       </CelestialContainer>
       <PlanetNavigation />
     </>
-  );
-};
+  )
+}

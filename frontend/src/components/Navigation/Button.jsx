@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const Button = styled.button`
   width: 150px;
@@ -28,4 +28,4 @@ export const Button = styled.button`
     font-size: var(--font-size-large);
     display: block;
   }
-`;
+`

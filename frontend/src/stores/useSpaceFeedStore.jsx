@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from "zustand"
 
 // Initial states
 export const useSpaceFeedStore = create((set) => ({
