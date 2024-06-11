@@ -4,6 +4,7 @@ import styled from "styled-components";
 import rocketIcon from "./../assets/icons/rocket.png";
 import rocketIconLiked from "./../assets/icons/rocket-filled.png";
 import { formatDistanceToNow } from "date-fns";
+import { Button } from "./Navigation/Button.jsx";
 
 const FeedContainer = styled.div`
   width: 100%;
@@ -62,36 +63,6 @@ const Form = styled.form`
 const CharacterCount = styled.div`
   text-align: right;
   width: 100%;
-`;
-
-const Button = styled.button`
-  width: 150px;
-  height: 45px;
-  background-color: #cf4b14;
-  color: #ffffff;
-  border-radius: 40px;
-  border: none;
-  font-family: var(--font-family-text);
-  font-size: var(--font-size-text-mob);
-  font-weight: 700;
-  display: block;
-  justify-content: center;
-  margin-bottom: 20px;
-
-  &:hover {
-    background-color: #ee723f;
-  }
-
-  &.active {
-    background-color: #ee723f;
-  }
-
-  @media (min-width: 768px) {
-    width: 200px;
-    height: 60px;
-    font-size: var(--font-size-large);
-    display: block;
-  }
 `;
 
 const LikeButton = styled.button`
