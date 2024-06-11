@@ -1,6 +1,6 @@
-import { useEffect, useState, useRef } from "react";
-import styled from "styled-components";
-import { Button } from "../components/Navigation/Button.jsx";
+import { useEffect, useState, useRef } from "react"
+import styled from "styled-components"
+import { Button } from "../components/Navigation/Button.jsx"
 
 const MassConverterFont = styled.div`
   font-family: var(--font-family-main);
@@ -10,7 +10,7 @@ const MassConverterFont = styled.div`
   align-items: center;
   margin-bottom: 60px;
   margin: 20px 20px;
-`;
+`
 
 const Heading = styled.h1`
   font-size: var(--font-size-h1-desktop);
@@ -18,7 +18,7 @@ const Heading = styled.h1`
   color: #ffffff;
   text-align: center;
   margin: 8px 0;
-`;
+`
 
 const Description = styled.p`
   font-size: var(--font-size-medium);
@@ -27,7 +27,7 @@ const Description = styled.p`
   color: var(--text-color-secondary);
   text-align: center;
   max-width: 1000px;
-`;
+`
 
 const Input = styled.input`
   font-family: "Roboto Mono", monospace;
@@ -37,7 +37,7 @@ const Input = styled.input`
   border-radius: 4px;
   width: 280px;
   height: 30px;
-`;
+`
 
 const Results = styled.div`
   margin-top: 20px;
@@ -54,11 +54,11 @@ const Results = styled.div`
   div {
     margin: 5px 0;
   }
-`;
+`
 
 const EnteredWeight = styled.div`
   color: #cf4b14;
-`;
+`
 
 const gravityFactors = {
   Mercury: 0.38,
@@ -70,43 +70,43 @@ const gravityFactors = {
   Uranus: 0.92,
   Neptune: 1.19,
   Pluto: 0.063,
-};
+}
 
 const calculateWeight = (weight, gravityFactor) => {
-  return weight * gravityFactor;
-};
+  return weight * gravityFactor
+}
 
 export const MassConverter = () => {
-  const [weight, setWeight] = useState("");
-  const [results, setResults] = useState({});
-  const resultsRef = useRef(null);
+  const [weight, setWeight] = useState("")
+  const [results, setResults] = useState({})
+  const resultsRef = useRef(null)
 
   const handleChange = (e) => {
-    setWeight(e.target.value);
-  };
+    setWeight(e.target.value)
+  }
 
   const handleCalculate = () => {
-    const weightInKilos = weight;
+    const weightInKilos = weight
     if (weightInKilos === null || weightInKilos <= 0) {
-      alert("Please enter any item's weight in kilos, perhaps your pet? 🐩 🐾");
-      return;
+      alert("Please enter any item's weight in kilos, perhaps your pet? 🐩 🐾")
+      return
     }
 
-    const newResults = {};
+    const newResults = {}
     for (const [planet, gravityFactor] of Object.entries(gravityFactors)) {
       newResults[planet] = calculateWeight(
         weightInKilos,
         gravityFactor
-      ).toFixed(2);
+      ).toFixed(2)
     }
-    setResults(newResults);
-  };
+    setResults(newResults)
+  }
 
   useEffect(() => {
     if (Object.keys(results).length > 0 && resultsRef.current) {
-      resultsRef.current.scrollIntoView({ behavior: "smooth" });
+      resultsRef.current.scrollIntoView({ behavior: "smooth" })
     }
-  }, [results]);
+  }, [results])
 
   return (
     <MassConverterFont>
@@ -140,5 +140,5 @@ export const MassConverter = () => {
         </Results>
       )}
     </MassConverterFont>
-  );
-};
+  )
+}

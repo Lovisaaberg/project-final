@@ -1,8 +1,5 @@
-
 import { useState, useEffect } from "react"
 import { NavLinks } from "../Navigation/NavLinks"
-import styled from "styled-components";
-
 
 export const AllPlanets = () => {
   const URL = `https://project-final-45vw.onrender.com/planets`
@@ -41,7 +38,6 @@ export const AllPlanets = () => {
   }
 
   return (
-
     <div>
       {planets.map((planet) => (
         <div key={planet._id}>
@@ -49,5 +45,5 @@ export const AllPlanets = () => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
