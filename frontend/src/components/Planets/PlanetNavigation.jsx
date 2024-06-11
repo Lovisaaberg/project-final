@@ -110,7 +110,9 @@ export const PlanetNavigation = () => {
       <PlanetImagesContainer>
         <Link to={getPlanetPath(prevPlanet.name)}>
           <ArrowLeft src={arrowLeft} alt="Left arrow icon" />
-          <PlanetImage src={prevPlanet.image} alt={prevPlanet.name} />
+          <PlanetImage src={prevPlanet.image} 
+          alt={prevPlanet.name}
+          saturnimg={prevPlanet.name === "saturn"} />
         </Link>
       </PlanetImagesContainer>
 
@@ -124,7 +126,9 @@ export const PlanetNavigation = () => {
 
       <PlanetImagesContainer>
         <Link to={getPlanetPath(nextPlanet.name)}>
-          <PlanetImage src={nextPlanet.image} alt={nextPlanet.name} />
+          <PlanetImage src={nextPlanet.image} 
+          alt={nextPlanet.name}
+          saturnimg={nextPlanet.name === "saturn"} />
           <ArrowRight src={arrowRight} alt="Right arrow icon" />
         </Link>
       </PlanetImagesContainer>
