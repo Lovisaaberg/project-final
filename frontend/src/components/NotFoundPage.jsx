@@ -19,6 +19,7 @@ const NotFoundContent = styled.div`
   font-size: var(--font-size-h1-desktop);
   text-align: center;
 `
+
 const StyledLink = styled(Link)`
   text-decoration: none;
 `

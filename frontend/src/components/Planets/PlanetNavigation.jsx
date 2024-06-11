@@ -82,7 +82,7 @@ const planets = [
 
 const getPlanetPath = (planetName) => {
   if (planetName === "sun" || planetName === "moon") {
-    return `/${planetName}`
+    return `/celestial/${planetName}`
   }
   return `/planets/${planetName}`
 }

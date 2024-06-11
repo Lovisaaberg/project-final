@@ -18,7 +18,6 @@ const HeaderContainer = styled.header`
   color: var(--text-color);
   font-family: var(--font-family-main);
   box-sizing: border-box;
-  margin-bottom: 80px;
 
   @media (min-width: 768px) {
     padding: 20px 40px;

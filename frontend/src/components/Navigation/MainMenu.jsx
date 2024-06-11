@@ -23,8 +23,8 @@ export const MainMenu = () => {
   const navLinks = [
     { label: "_PLANETS", to: "/planets" },
     { label: "_MASS CONVERTER", to: "/massconverter" },
-    { label: "_THE SUN", to: "/sun" },
-    { label: "_THE MOON", to: "/moon" },
+    { label: "_THE SUN", to: "/celestial/sun" },
+    { label: "_THE MOON", to: "/celestial/moon" },
   ]
 
   return (

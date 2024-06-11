@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom"
+import GlobalStyles from "./components/GlobalStyles"
 import { HomeRoutes } from "./routes/HomeRoutes"
 import { Header } from "./components/Navigation/Header"
-import GlobalStyles from "./components/GlobalStyles"
 
 export const App = () => {
   return (
