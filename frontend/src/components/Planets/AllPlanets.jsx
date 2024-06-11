@@ -1,12 +1,5 @@
 import { useState, useEffect } from "react";
 import { NavLinks } from "../Navigation/NavLinks";
-import styled from "styled-components";
-
-const Planets = styled.div`
-    div.roboto-mono {
-      font-family: "Roboto Mono";
-    }
-  }`;
 
 export const AllPlanets = () => {
   const URL = `https://project-final-45vw.onrender.com/planets`;
@@ -45,14 +38,12 @@ export const AllPlanets = () => {
   }
 
   return (
-    <Planets>
-      <div>
-        {planets.map((planet) => (
-          <div key={planet._id}>
-            <NavLinks label={planet.name} to={`/planets/${planet.name}`} />
-          </div>
-        ))}
-      </div>
-    </Planets>
+    <div>
+      {planets.map((planet) => (
+        <div key={planet._id}>
+          <NavLinks label={planet.name} to={`/planets/${planet.name}`} />
+        </div>
+      ))}
+    </div>
   );
 };

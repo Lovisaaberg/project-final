@@ -289,5 +289,3 @@ export const SpaceFeed = () => {
     </FeedContainer>
   );
 };
-
-export default SpaceFeed;
