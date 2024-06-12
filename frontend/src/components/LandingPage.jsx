@@ -1,8 +1,8 @@
 import { PlanetsCarousel } from "./PlanetsCarousel"
 import { SpaceFeed } from "./SpaceFeed"
-import GlobalStyles from "./GlobalStyles"
 import earthImg from "./../assets/images/earthImg.jpg"
 import styled from "styled-components"
+import halfMoon from "./../assets/images/moonFooter.png"
 
 const Headline = styled.h1`
   font-size: var(--font-size-h1-mob);
@@ -12,6 +12,7 @@ const Headline = styled.h1`
   text-align: center;
   justify-content: center;
   margin-bottom: 30px;
+  margin: 20px;
 
   @media (min-width: 768px) {
     font-size: var(--font-size-h1-desktop);
@@ -25,7 +26,7 @@ const IntroText = styled.p`
   text-align: center;
   justify-content: center;
   max-width: 750px;
-  margin: auto;
+  margin: 20px;
 
   @media (min-width: 768px) {
     font-size: var(--font-size-medium);
@@ -56,23 +57,30 @@ const Overlay = styled.div`
   align-items: center;
 `
 
+const MoonImage = styled.img`
+  width: 100%;
+  margin-top: 60px;
+`
+
 export const LandingPage = () => {
   return (
-    <div>
-      <GlobalStyles />
-      <Headline>THE S0LAR SYSTEM TRAVEL GUIDE</Headline>
-      <IntroText>
-        Explore the wonders of our solar system, learn fascinating facts about
-        the planets and celestial bodies, and join the conversation in our
-        Celestial Feed.
-      </IntroText>
-      <PlanetsCarousel />
-      <ImageContainer>
-        <Image src={earthImg} alt="Image of earth from space" />
-        <Overlay>
-          <SpaceFeed />
-        </Overlay>
-      </ImageContainer>
-    </div>
+    <>
+      <div>
+        <Headline>THE S0LAR SYSTEM TRAVEL GUIDE</Headline>
+        <IntroText>
+          Explore the wonders of our solar system, learn fascinating facts about
+          the planets and celestial bodies, and join the conversation in our
+          Celestial Feed.
+        </IntroText>
+        <PlanetsCarousel />
+        <ImageContainer>
+          <Image src={earthImg} alt="Image of earth from space" />
+          <Overlay>
+            <SpaceFeed />
+            <MoonImage src={halfMoon} alt="Picture of Moon" />
+          </Overlay>
+        </ImageContainer>
+      </div>
+    </>
   )
 }

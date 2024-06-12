@@ -4,7 +4,7 @@ const GlobalStyles = createGlobalStyle`
 
 body {
   margin: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--font-family-main); 

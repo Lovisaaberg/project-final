@@ -9,7 +9,7 @@ import { Loading } from "../components/Loading.jsx"
 
 const FeedContainer = styled.div`
   width: 100%;
-  margin: auto;
+  margin: 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,25 +30,15 @@ const FeedContainer = styled.div`
     }
   }
 
+  p {
+    margin: 20px;
+  }
+
   @media (min-width: 768px) {
     width: 100%;
     max-width: 925px;
     max-height: 1100px;
     font-size: var(--font-size-large);
-  }
-
-  textarea {
-    width: 260px;
-    height: 60px;
-    border-radius: 8px;
-    padding-left: 8px;
-
-    @media (min-width: 768px) {
-      width: 660px;
-      height: 140px;
-      font-size: 16px;
-      padding: 16px 16px;
-    }
   }
 `
 
@@ -59,11 +49,41 @@ const Form = styled.form`
   gap: 10px;
   width: 100%;
   max-width: 660px;
+  margin: 20px 20px;
+`
+
+const TextareaContainer = styled.div`
+  position: relative;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+const StyledTextarea = styled.textarea`
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+  font-size: 16px;
+
+  @media (max-width: 768px) {
+    height: 140px;
+  }
 `
 
 const CharacterCount = styled.div`
-  text-align: right;
-  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: grey;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
 `
 
 const LikeButton = styled.button`
@@ -86,7 +106,7 @@ const MessageContainer = styled.div`
   font-size: var(--font-size-text-mob);
   font-family: var(--font-family-text);
   color: var(--text-color-primary);
-  margin-bottom: 10px;
+  margin: 20px 40px;
 
   @media (min-width: 768px) {
     width: 660px;
@@ -209,16 +229,16 @@ export const SpaceFeed = () => {
       </p>
 
       <Form onSubmit={handleSubmit}>
-        <label>
-          <textarea
+        <TextareaContainer>
+          <StyledTextarea
             type="text"
             value={newMessage}
             placeholder="Share something here..."
             required
             onChange={handleNewMessage}
           />
-        </label>
-        <CharacterCount>{remainingChars} / 140</CharacterCount>
+          <CharacterCount>{remainingChars} / 140</CharacterCount>
+        </TextareaContainer>
         <Button type="submit" disabled={loading}>
           POST
         </Button>
@@ -227,7 +247,7 @@ export const SpaceFeed = () => {
 
       {messageError && <p>{messageError}</p>}
 
-      {loading && <Loading/>}
+      {loading && <Loading />}
 
       <MessageContainer>
         <ul>
