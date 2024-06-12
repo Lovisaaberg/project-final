@@ -102,7 +102,6 @@ export const PlanetsCarousel = () => {
     slidesToScroll: 1,
     swipeToSlide: true,
     centerMode: true,
-    dots: true,
     responsive: [
       {
         breakpoint: 1024,

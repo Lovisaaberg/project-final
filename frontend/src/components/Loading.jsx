@@ -3,15 +3,15 @@ import { Player } from "@lottiefiles/react-lottie-player"
 import loadingAnimation from "../assets/animations/carouselLottie.json"
 
 export const Loading = () => {
-  //   const [showContent, setShowContent] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
-  //   useEffect(() => {
-  //     const timer = setTimeout(() => {
-  //       setShowContent(true)
-  //     }, 3000)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
 
-  //     return () => clearTimeout(timer)
-  //   }, [])
+    return () => clearTimeout(timer)
+  }, [])
   return (
     <div
       style={{
@@ -30,3 +30,26 @@ export const Loading = () => {
     </div>
   )
 }
+
+// return (
+//     <>
+//       {isLoading ? (
+//         <div
+//           style={{
+//             display: "flex",
+//             justifyContent: "center",
+//             alignItems: "center",
+//             height: "100vh",
+//           }}
+//         >
+//           <Player
+//             src={loadingAnimation}
+//             autoplay
+//             loop
+//             style={{ height: "300px", width: "300px" }}
+//           />
+//         </div>
+//       )
+//     </>
+//   );
+// };
