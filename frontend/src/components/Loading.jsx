@@ -12,6 +12,7 @@ export const Loading = () => {
 
   //     return () => clearTimeout(timer)
   //   }, [])
+  
   return (
     <div
       style={{

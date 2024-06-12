@@ -13,6 +13,22 @@ const NotFoundContainer = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media (min-width: 768px) {
+    background-image: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0) 20%,
+        rgba(0, 0, 0, 1) 50%
+      ),
+      url(${backgroundImage});
+    background-size: contain;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   h1 {
     font-family: var(--font-family-headlines);
     font-size: var(--font-size-h1-mob);
