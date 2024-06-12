@@ -81,25 +81,9 @@ const MoonImage = styled.img`
 
 export const LandingPage = () => {
   return (
-    <PageContainer>
-      <Headline>THE S0LAR SYSTEM TRAVEL GUIDE</Headline>
-      <IntroText>
-        Explore the wonders of our solar system, learn fascinating facts about
-        the planets and celestial bodies, and join the conversation in our
-        Celestial Feed.
-      </IntroText>
-      <PlanetsCarousel />
-      <ImageContainer>
-        <Image src={earthImg} alt="Image of earth from space" />
-        <Overlay>
-          <SpaceFeed />
-          <MoonImage src={footerImg} alt="Picture of Moon" />
-        </Overlay>
-      </ImageContainer>
-    </PageContainer>
     <>
       <Loading>
-        <div>
+        <PageContainer>
           <Headline>THE S0LAR SYSTEM TRAVEL GUIDE</Headline>
           <IntroText>
             Explore the wonders of our solar system, learn fascinating facts
@@ -111,10 +95,10 @@ export const LandingPage = () => {
             <Image src={earthImg} alt="Image of earth from space" />
             <Overlay>
               <SpaceFeed />
-              <MoonImage src={halfMoon} alt="Image of the Moon" />
+              <MoonImage src={footerImg} alt="Picture of Moon" />
             </Overlay>
           </ImageContainer>
-        </div>
+        </PageContainer>
       </Loading>
     </>
   )
