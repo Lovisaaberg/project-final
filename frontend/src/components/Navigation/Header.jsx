@@ -68,15 +68,15 @@ const MobileMenuIcon = styled.div`
 
 const MobileMenuWrapper = styled.div`
   position: absolute;
+  background-color: var(--background-color);
   top: 0;
   right: 70%;
   height: 100%;
-  width: 100%;
-  background-color: var(--background-color);
   width: 300px;
   z-index: 1000;
   transform: translateX(${(props) => (props.isOpen ? "0" : "100%")});
   transition: transform 0.3s ease-in-out;
+  transition: transform 1s ease-in-out;
 
   @media (max-width: 420px) {
     width: 70%;
@@ -101,7 +101,13 @@ export const Header = () => {
 
   // Function to handle mobile menu
   const handleMobileMenu = () => {
-    setIsMenuOpen((prev) => !prev)
+    if (isMenuOpen) {
+      setTimeout(() => {
+        setIsMenuOpen(false)
+      }, 500)
+    } else {
+      setIsMenuOpen(true)
+    }
   }
 
   // Close menu when clicking outside
@@ -128,7 +134,7 @@ export const Header = () => {
           <MainMenu />
           {isMenuOpen && (
             <MobileMenuWrapper isOpen={isMenuOpen}>
-              <MobileMenu />
+              <MobileMenu handleMenuClick={handleMobileMenu} />
             </MobileMenuWrapper>
           )}
           <MobileMenuIcon onClick={handleMobileMenu}>

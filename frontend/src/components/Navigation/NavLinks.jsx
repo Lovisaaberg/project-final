@@ -14,6 +14,6 @@ const StyledNavLink = styled(NavLink)`
   }
 `
 
-export const NavLinks = ({ label, to }) => {
-  return <StyledNavLink to={to}>{label}</StyledNavLink>
+export const NavLinks = ({ label, to, handleMenuClick }) => {
+  return <StyledNavLink to={to} onClick={handleMenuClick}>{label}</StyledNavLink>
 }

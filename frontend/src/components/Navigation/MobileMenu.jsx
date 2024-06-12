@@ -2,7 +2,8 @@ import { NavLinks } from "./NavLinks"
 import styled from "styled-components"
 
 const MobileMenuContainer = styled.ul`
-  display: none;
+  display: flex;
+  background-color: var(--background-color);
 
   @media (max-width: 768px) {
     display: flex;
@@ -19,7 +20,7 @@ const MobileMenuItem = styled.li`
   margin: 10px 0;
 `
 
-export const MobileMenu = () => {
+export const MobileMenu = ({ handleMenuClick }) => {
   const mobileLinks = [
     { label: "_PLANETS", to: "/planets" },
     { label: "_MASS CONVERTER", to: "/massconverter" },
@@ -31,7 +32,7 @@ export const MobileMenu = () => {
     <MobileMenuContainer>
       {mobileLinks.map((link, index) => (
         <MobileMenuItem key={`navlink-${index}`}>
-          <NavLinks label={link.label} to={link.to} />
+          <NavLinks label={link.label} to={link.to} handleMenuClick={handleMenuClick} />
         </MobileMenuItem>
       ))}
     </MobileMenuContainer>
