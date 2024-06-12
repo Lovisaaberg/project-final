@@ -78,7 +78,7 @@ const ImageContainer = styled.div`
   margin-bottom: 20px;
   grid-column: 1 / 3;
 
-  @media (min-width: 830px) {
+  @media (min-width: 1000px) {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     margin-bottom: 0;
@@ -90,7 +90,7 @@ const PlanetImgMob = styled.img`
   max-width: 400px;
   margin: 20px auto;
 
-  @media (min-width: 830px) {
+  @media (min-width: 1000px) {
     display: none;
   }
 `
@@ -102,7 +102,7 @@ const PlanetImg = styled.img`
 
   margin-right: 20px;
 
-  @media (max-width: 830px) {
+  @media (max-width: 1001px) {
     display: none;
   }
 `
