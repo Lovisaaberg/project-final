@@ -1,16 +1,16 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import { PlanetNavigation } from "./PlanetNavigation";
-import mercuryImg from "../../assets/images/mercury.png";
-import venusImg from "../../assets/images/venus.png";
-import tellusImg from "../../assets/images/tellus.png";
-import marsImg from "../../assets/images/mars.png";
-import jupiterImg from "../../assets/images/jupiter.png";
-import saturnImg from "../../assets/images/saturn.png";
-import uranusImg from "../../assets/images/uranus.png";
-import neptuneImg from "../../assets/images/neptune.png";
-import plutoImg from "../../assets/images/pluto.png";
-import leftarrow from "../../assets/icons/leftarrow.png";
+import { NavLink } from "react-router-dom"
+import styled from "styled-components"
+import { PlanetNavigation } from "./PlanetNavigation"
+import mercuryImg from "../../assets/images/mercury.png"
+import venusImg from "../../assets/images/venus.png"
+import tellusImg from "../../assets/images/tellus.png"
+import marsImg from "../../assets/images/mars.png"
+import jupiterImg from "../../assets/images/jupiter.png"
+import saturnImg from "../../assets/images/saturn.png"
+import uranusImg from "../../assets/images/uranus.png"
+import neptuneImg from "../../assets/images/neptune.png"
+import plutoImg from "../../assets/images/pluto.png"
+import leftarrow from "../../assets/icons/leftarrow.png"
 
 const BackLink = styled(NavLink)`
   position: absolute;
@@ -29,11 +29,10 @@ const BackLink = styled(NavLink)`
   }
 `
 
-
 const LeftArrow = styled.img`
   width: 20px;
   margin-right: 8px;
-`;
+`
 
 const PlanetContainer = styled.div`
   margin: 20px 20px;
@@ -41,7 +40,7 @@ const PlanetContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const PlanetPage = styled.div`
   font-family: var(--font-family-headlines);
@@ -59,7 +58,7 @@ const PlanetPage = styled.div`
     text-align: center;
     margin-top: 0px;
   }
-`;
+`
 
 const PlanetHeadline = styled.h1`
   font-size: var(--font-size-h1-mob);
@@ -70,7 +69,7 @@ const PlanetHeadline = styled.h1`
   @media (min-width: 768px) {
     font-size: var(--font-size-h1-desktop);
   }
-`;
+`
 
 const ImageContainer = styled.div`
   display: flex;
@@ -108,7 +107,6 @@ const PlanetImg = styled.img`
   }
 `
 
-
 const PlanetDetails = styled.div`
   font-family: var(--font-family-text);
   display: flex;
@@ -143,7 +141,7 @@ const PlanetDetails = styled.div`
       font-size: var(--font-size-large);
     }
   }
-`;
+`
 
 const TextBoxContainer = styled.div`
   display: flex;
@@ -210,7 +208,7 @@ const RightColumn = styled.div`
     align-items: flex-end;
     margin-left: 20px;
   }
-`;
+`
 
 const planetImages = {
   Mercury: mercuryImg,
@@ -225,10 +223,8 @@ const planetImages = {
 }
 
 export const PlanetContent = ({ onePlanet }) => {
-
   const surfaceTemperature = onePlanet.surfaceTemperature
   const planetImg = planetImages[onePlanet.name]
-
 
   return (
     <>
@@ -333,4 +329,3 @@ export const PlanetContent = ({ onePlanet }) => {
     </>
   )
 }
-
